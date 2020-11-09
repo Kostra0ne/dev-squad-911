@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box model</title>
+    <style>
+      /* quick custom reset rule */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        width: 300px;
+      }
+
+      p {
+        width: 100px;
+      }
+
+      #parent-of-inline-elements > * {
+        margin: 10px 20px 40px;
+      }
+
+      #box-example {
+        background: red;
+        height: 35px;
+        width: 200px;
+        margin: 50px;
+        border: 10px solid blue;
+        padding: 40px;
+      }
+
+      .block {
+        background: dodgerblue;
+        height: 20px;
+        margin-right: 100px;
+        flex: 1;
+      }
+
+      .flex-row {
+        display: flex;
+      }
+
+      .flex-row .block:last-of-type {
+        margin-right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        what you must remember:
+        display: block
+        display: inline
+        padding: value | value value | value value value value | value value value
+        margin
+        border
+        box-sizing
+     -->
+    <!-- <h1>block vs inline elements !</h1> -->
+    <div id="parent-of-inline-elements">
+      <b>hello</b>, <i>world</i> <span>!!!</span>
+    </div>
+    <p>
+      <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+      suscipit, eum ipsam accusamus nobis sunt soluta odio, illum earum aliquid,
+      voluptatem velit nesciunt! Suscipit ex non est dolor accusantium
+      explicabo!êê
+    </p> -->
+    </p>
+    <div id="box-example">hello hackers</div>
+    <hr />
+    <div class="flex-row">
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+    </div>
+  </body>
+</html>

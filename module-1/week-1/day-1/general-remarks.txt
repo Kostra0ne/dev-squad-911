@@ -1,0 +1,55 @@
+coding is hard
+coding is art
+coding is fun !
+-------
+emotional rollercoaster is REAL, don't fear it please: it's part of the process
+--------
+don't compare yourself with others : it's a fight against yourself ;)
+during the class, during the labs, during the group projects
+--------
+ask questions : there is NO SUCH THING as a "stupid question"
+just wait the proper moment please ;)
+--------
+take some notes : notebook, notion, google doc's, your call
+--------
+read the lesson : the day before is better !
+cause we are not PDF reader ;)
+--------
+read the docs !!!! (google it ... MDN ... stackoverflow ... and many more :)
+technical documentations are your best friends
+research part is essential for a developer
+
+mandatory steps : look for yourself > ask your friends > ask the TA's > ask the LT
+--------
+Try to be as autonomous as possible
+the hacker spirit : finding the solution
+developer : find a path from A -> Z
+--------
+DON'T COPY/PASTE CODE YOU DON'T UNDERSTAND ;)
+the game is to find your own kung-fu
+--------
+read the console / read the terminal : even if it takes some time to master it 
+coding requires READING !!!!
+advice: do the debugging lab ;)
+--------
+about the "best practices" "good practices"
+--------
+wax on, wax off !!!
+--------
+code along : I'll let you finish
+code demo : sit back, watch and relax (and ask questions :)
+--------
+about dummy content: lorem ipsum, foo, bar, baz, toto, titi
+user/sneaker/music-intrument/bill/image
+... foo bar baz (generic content, placeholders ...)
+
+check: http://www.catb.org/jargon/html/F/foo.html
+--------
+Code assesment : technical tests, on the "qualified" plateform
+--------
+focus on the journey, you'll think about the outcome (jobs) in two months
+--------
+intro videos
+
+https://www.youtube.com/watch?v=gc8mDZwUlfo
+https://www.youtube.com/watch?v=gc8mDZwUlfo

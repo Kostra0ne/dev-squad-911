@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get familiar with class/id attributes</title>
+    <style>
+      body {
+        padding: 10px;
+      }
+      #kenton {
+        color: dodgerblue;
+        font-size: 2rem;
+      }
+      /*  from line 9-1 : a CSS rule (a selector + open/closed curly brackets + a set of key/value pairs ) */
+      .list {
+        color: red;
+      }
+      .list.users {
+        color: blue;
+        background: whitesmoke;
+      }
+      .list.users.registered {
+        color: green;
+      }
+      .shoes * {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="kenton">hi kenton</div>
+    <ul class="list">
+      <li>wake up</li>
+      <li>code</li>
+      <li>rest</li>
+      <li>read more code</li>
+    </ul>
+    <ul class="list users">
+      <li>Liz</li>
+      <li>Alan</li>
+      <li id="this-page-admin">Hakim</li>
+    </ul>
+    <ul class="list users registered">
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+    </ul>
+    <ul class="list shoes">
+      <li>adidas</li>
+      <li>nike</li>
+      <li>reebok</li>
+    </ul>
+    <!-- ul.todo>li.item*10 -->
+    <!-- ul.todo>li.item*10>{user $} -->
+
+    <plate>
+      <bento>
+        <pickle></pickle>
+      </bento>
+    </plate>
+  </body>
+</html>
