@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 200vh;
+  /* vh : viewport height */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body > * {
+  padding: 0 20px;
+}
+
+#header-main {
+  background: dodgerblue;
+  height: 80px;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+
+#nav-main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#nav-main a {
+  margin-right: 10px;
+}
+
+#nav-main a:last-of-type {
+  margin-right: 0;
+}
+
+#nav-main a:hover {
+  color: darkorange;
+}
+
+#content-main {
+  top: 80px;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#carousel {
+  max-width: 760px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#carousel .btn {
+  background: whitesmoke;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  padding: 7px;
+  width: 65px;
+  height: 28px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: calc(100% / 2 - 14px);
+}
+
+#carousel .btn.prev {
+  left: 10px;
+}
+
+#carousel .btn.next {
+  right: 10px;
+}
+
+#carousel .btn:hover {
+  background: black;
+  color: whitesmoke;
+}
+
+.blocks-flex-wrap {
+  display: flex;
+}
+
+.blocks-flex-wrap .block {
+  height: 100px;
+  background: dodgerblue;
+  color: whitesmoke;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid whitesmoke;
+}
+
+@media (max-width: 768px) {
+  /* media queries : a way to create specific CSS rules for a given vieport width */
+  body {
+    background: tomato;
+  }
+  
+  .blocks-flex-wrap {
+    flex-direction: column;
+  }
+
+  .blocks-flex-wrap .block {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    background: darkgoldenrod;
+  }
+}
