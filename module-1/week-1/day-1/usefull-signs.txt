@@ -7,7 +7,7 @@
 _     (underscore)
 >     (greater sign / chevron fermant)
 <     (less sign / chevron ouvrant)
-#   (sharp or hash / dièse)
+#     (sharp or hash / dièse)
 '     (simple quote, guillemet simple)
 "     (double quote, guillemet simple)
 `     (back tick quote)
