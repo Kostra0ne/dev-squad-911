@@ -32,20 +32,19 @@ const sneakers4 = {
 
 const sneakers = [sneaker1, sneaker2, sneakers3, sneakers4];
 
-
 // console.log(sneakers);
-
 
 // console.log( sneakers[1].price, sneakers[2].brand )
 
 // console.log(  sneakers[ sneakers.length - 1 ].price  );
 
 for (let i = 0; i < sneakers.length; i++) {
-  const price = sneakers[i].price;
-  const copy = {...sneakers[i]}
-  console.log(copy);
-  copy.price = -1;
-  console.log("----");
+  console.log(`--${i}--`);
+  console.log("brand : ", sneakers[i].brand);
+  console.log("name : ", sneakers[i].name);
+  console.log("price : ", sneakers[i].price);
+  // const copy = { ...sneakers[i] };
+  // copy.price = -1;
 }
 
-console.log(sneakers);
+// console.log(sneakers);
