@@ -1,7 +1,7 @@
 const fruits = ["apple", "apple", "banana", "peach", "pear"];
 
 // HOF => Higher Order Function
-// will loop through all the array's values
+// filter will loop through all the array's values
 // return a brand new array, containing only the values that  passed the provided test
 // the test you provide in the callback function should return a boolean
 
