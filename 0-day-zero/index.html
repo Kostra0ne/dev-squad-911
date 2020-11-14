@@ -4,14 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>day 0</title>
+    <style>
+      @import url(https://overpass-30e2.kxcdn.com/overpass.css);
+
+      body {
+        font-family: overpass;
+      }
+    </style>
   </head>
   <body>
-    <h1 class="title">welcome guys !!!</h1>
+    <h1 class="title">IronHack Web Dev, day zero</h1>
+    <h2 class="title">welcome, Squad</h2>
+    <hr />
+    <h2 class="title">Prerequisites</h2>
     <p>
-      launch this page with lite-server command from the terminal !
+      <b>open a terminal window</b> (default shell, i-term, VSCode terminal
+      etc.)<br />
+      Then check that :
+    </p>
+
+    <p>
+      <i><b>A / VS Studio Code is installed</b></i>
+    </p>
+
+    <p>
+      <i><b>B / nodejs is installed</b></i>
+    </p>
+    <code> $ node --version</code><br />
+
+    <p>
+      <i><b>C / Mongodb and mongo Compass are installed</b></i
+      ><br />
+      please refer to the official documentation for your current O.S (operating
+      system).<br />
+      <a
+        href="https://docs.mongodb.com/manual/administration/install-community/"
+        target="_blank"
+        >installation doc</a
+      >
+      -
+      <a href="https://www.mongodb.com/products/compass" target="_blank"
+        >get compass</a
+      >
     </p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, molestias!
+      <b>once done...</b>
+    </p>
+    <hr />
+    <h2 class="title">Intro challenge</h2>
+    <p>
+      <b>once done...</b> <br />
+      install these two packages globally:
+    </p>
+    <code> $ [sudo] npm install -g lite-server nodemon </code>
+
+    <h3>1 - check your location</h3>
+    <code>
+      $ pwd<br />
+      $ ls
+    </code>
+    <h3>2 - Create a dedicated folder for the bootcamp</h3>
+    <code> $ mkdir Users/you/code/ironhack-bootcamp </code>
+    <p>This is now your main working directory for the next 2 months.</p>
+    <h3>3 - navigate to the folder with your terminal</h3>
+    <code>
+      $ cd path/to/you/code/ironhack-bootcamp<br />
+      $ mkdir 0-day<br />
+      $ cd 0-day<br />
+      $ touch index.html index.js index.css<br />
+      $ code .
+    </code>
+    <hr />
+    <h3>4 - Add some basic content</h3>
+    <b><p>> Build a simple HTML file</p></b>
+    <xmp>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Ironhack | web dev bootcamp - day 0</title>
+      <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+      <h1>Hello, World</h1>
+      <p>foo, bar, baz</p>
+      <p>please check the <a href="https://developer.mozilla.org/" target="_blank">doc</a></p>
+    </body>
+  </html>
+    </xmp>
+    <b><p>> Add a CSS sprinkle</p></b>
+    <pre>
+  @import url(https://overpass-30e2.kxcdn.com/overpass.css);
+
+  body {
+    font-family: overpass;
+  }
+    </pre>
+    <b>
+      <p>> Write a simple message in JavaScript</p>
+    </b>
+    <code>console.log('Hello, World');</code>
+    <hr />
+    <h3>5 - start the client server</h3>
+    <code> $ lite-server </code>
+    <p>
+      If all set, a browser window opens and you should see your html page.<br />
+    </p>
+
+    <h4>Troubleshooting</h4>
+    <p>
+      - If you end up with the message <i>cannot /GET</i>, check your current
+      location with pwd and ls :<br />
+      Your current working directory <b>MUST</b> contain an index.html.<br />
+    </p>
+    <hr />
+    <h3>6 - start the backend server</h3>
+
+    <code> $ nodemon </code>
+    <p>
+      If all set, the message should be printed on your terminal window.<br />
+    </p>
+    <h4>Troubleshooting</h4>
+    <p>
+      - your folder <b>should</b> contain an index.js<br />
+      - check the terminal for error messages.<br />
+      - check your files for syntax error.
     </p>
   </body>
 </html>
