@@ -1,3 +1,6 @@
+# basic terminal commands
+
+
 - pwd                                (path current working directory)
 - clear                              (clear the current terminal window)
 - ls                                 (list all folder and files )
