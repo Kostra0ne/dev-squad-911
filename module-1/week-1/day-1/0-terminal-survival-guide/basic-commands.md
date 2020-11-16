@@ -5,7 +5,8 @@
 - ls                                 (list all folder and files )
 - ll                                 (list all folder and files + rights details + date creation + user + user group ... )
 - ls -a                              (list all folder and files + hidden ones )
-- cd                                 (change folder)
+- cd folder-path                     (change location to folder-path)
+- cd                                 go to home folder
 - cd ..                              (go 1 folder up in the filesystem)
 - cd ../..                           (go 2 folders up in the filesystem (and so on...))
 - cd /                               (goto the  file system's root : don't mess up there)
@@ -18,4 +19,8 @@
 - cp file.md ./new-location          (copy recursively)
 - cp -r folder ./new-location        (remove a folder recursively)
 - cat file-name                      (display the file content in the terminal)
+- cat > file-name.ext                (open a basic text editor and save the input in file-name.ext, exit with control+D)
 - code .                             (open a studio code window @ current location) (config cmd+shift+p => install 'code' command in PATH)
+- man, --help
+- ex: $ man pwd
+- tab key     (starts auto completion)
