@@ -1,4 +1,5 @@
-const hackers = [ // array containing objects
+const hackers = [
+  // array containing objects
   { name: "Haroon", email: "haroon@gmail.com" },
   { name: "Liz", email: "liz@dev.co" },
   { name: "Yang", email: "ceo@startup.io" },
@@ -16,16 +17,15 @@ const ulHackers = document.getElementById("dynamic-ironhackers");
 function createHackerLi(infos) {
   const li = document.createElement("li"); // is an instanceof HTMLLiElement
   li.className = "hacker"; // add the css class hacker to the current li
-  li.textContent = infos.name + " - " + infos.email; // add some text content
+  //li.textContent = infos.name + " - " + infos.email; // add some text content
+  li.textContent = `${infos.name} ${infos.email}`; // add some text content
   li.onclick = handleClick; // attach an event listener to an event handler
   return li; // returns the created li
 }
 
-// 3 Insert each created li in the ul#dynamic-ironhackers with element.appendChild(child)
-
 // 4 Code the handleClick function :
 // - add/remove the is-active CSS class on the clicked element
-function handleClick(evt) { 
+function handleClick(evt) {
   // by default, any event handler gets access to an evt object as implicit argument
   // console.log(evt);
   // console.log(evt.target); // evt.target is the source of the event
@@ -35,8 +35,13 @@ function handleClick(evt) {
 }
 
 // 1 loop through the hackers array with forEach
-
-hackers.forEach(function (hacker) {
+function start(hacker) {
   const newhackerLi = createHackerLi(hacker); // returns a new Li object fo Each object
+
+  // 3 Insert each created li in the ul#dynamic-ironhackers with element.appendChild(child)
+
   ulHackers.appendChild(newhackerLi);
-});
+}
+
+
+hackers.forEach(start);
