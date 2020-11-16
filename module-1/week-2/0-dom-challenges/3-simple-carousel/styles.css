@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+}
+
+#carousel #btns {
+  display: flex;
+  justify-content: space-around;
+  max-width: 120px;
+  margin: auto auto 20px;
+}
+
+#carousel .btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0.2px 1px 2px #101;
+  cursor: pointer;
+  height: 32px;
+  padding: 0;
+  outline: none;
+  transition: background-color 1s linear;
+  width: 32px;
+}
+
+#carousel .btn:hover {
+  background-color: #101;
+  color: whitesmoke;
+}
+
+#carousel .img {
+  display: block;
+  display: block;
+  margin: auto;
+}
+
+
+footer .title {
+  font-size: .9rem;
+  font-weight: 200;
+  position: fixed;
+  padding-top: 20px;
+  right: 20px;
+  top: 265px;
+}
