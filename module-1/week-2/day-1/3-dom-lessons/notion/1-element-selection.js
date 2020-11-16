@@ -32,45 +32,16 @@ allBtns.forEach((btn, index) => {
   console.log(btn);
 });
 
-// fetch all hackers
-// loop throug the list with a foreach OR for loop
-// display each element's textContent (Liz, Bill, Joe)
-
-const hackers = document.getElementById("ironhackers");
-const allHackers = document.querySelectorAll("#ironhackers .hacker");
-
-console.log(allHackers); // all : the full list
-
-for (let i = 0; i < allHackers.length; i++) {
-  console.log(allHackers[i].textContent); // each element in the allHackers list
-}
-
-console.log("-----");
-
-allHackers.forEach(function (hacker) {
-  // console.log(typeof hacker);
-  console.log(hacker.textContent);
-});
-
-console.log(hackers.children);
-
-Array.from(hackers.children).forEach((hacker) => {
-  console.log(hacker);
-});
-
-[...hackers.children].forEach((hacker) => {
-  console.log(hacker);
-});
-
-// console.log(hackers.children);
 
 // HTMLCollection
 const firstButtonRow = document.getElementById("first-buttons-row");
 const allButtons = document.getElementsByTagName("button");
 const firstRowButtons =  firstButtonRow.getElementsByTagName("button");
+const btnCollection = document.getElementsByClassName("btn");
+
 console.log("all buttons >", allButtons);
-// document.getElementsByClassName
-// document.getElementsByTagName
+console.log("btnCollection >", btnCollection);
+
 
 
 const firstHacker = document.getElementById("first-hacker");

@@ -23,10 +23,10 @@ myInput.addEventListener("input", function () {
 
 buttonAction4.addEventListener("click", function () {
 //   console.log("button has been clicked !");
-  if (pageBody.style.backgroundColor === "lightblue") {
-    pageBody.style.backgroundColor = "white";
+  if (!pageBody.style.backgroundColor || pageBody.style.backgroundColor === "white") {
+    pageBody.style.backgroundColor = "#3F51B5";
   } else {
-    pageBody.style.backgroundColor = "lightblue";
+    pageBody.style.backgroundColor = "white";
   }
 });
 
@@ -39,4 +39,4 @@ buttonAction4.addEventListener("click", function () {
 // change the body's background color when the user clicks on the page
 // BONUS : if the background is already set, get back to a white background
 
-// Code along : create a simple todo list ( with events and innerHTML )
+

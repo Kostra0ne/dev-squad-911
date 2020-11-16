@@ -13,7 +13,7 @@
       }
 
       body {
-        padding: 60px
+        padding: 60px;
       }
 
       h1 {
@@ -29,39 +29,28 @@
       }
 
       #box-example {
-        background: red;
-        height: 35px;
+        font-family: Arial;
+        background: #2b203a;
+        height: 100px;
         width: 200px;
-        margin: 50px;
-        border: 10px solid blue;
-        padding: 40px;
-      }
-
-      .block {
-        background: dodgerblue;
-        height: 20px;
-        margin-right: 100px;
-        flex: 1;
-      }
-
-      .flex-row {
-        display: flex;
-      }
-
-      .flex-row .block:last-of-type {
-        margin-right: 0;
+        margin: 34px;
+        border: 10px solid #cf5a59;
+        color: #F49852;
+        padding: 25px;
+        text-transform: uppercase;
+        font-weight: bolder;
       }
     </style>
   </head>
   <body>
     <!-- 
-        what you must remember:
-        display: block
+        what you must remember aboux box model:
         display: inline
+        display: block
         padding: value | value value | value value value value | value value value
-        margin
+        margin: value | value value | value value value value | value value value
         border
-        box-sizing
+        box-sizing: border-box, make things easier when measuring elements
      -->
     <!-- <h1>block vs inline elements !</h1> -->
     <div id="parent-of-inline-elements">
@@ -75,6 +64,6 @@
     </p> -->
     </p>
     <hr />
-    <div id="box-example">hello hackers</div>
+    <div id="box-example">hello, <br> hackers :)</div>
   </body>
 </html>

@@ -6,21 +6,17 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-family: Avenir;
   min-height: 100vh;
+  padding: 20px;
   /* display: grid;
   grid-template-rows: 80px minmax(10vh, 180px) 1fr;
   max-width: 95vw;
   margin: auto;
-} */
-
-body > * {
-  padding: 10px 20px 10px;
+  */
 }
 
 input[type="number"] {
@@ -122,8 +118,14 @@ input[type="number"] {
   grid-row: 2 / 3;
 }
 
-
 #demo {
   display: flex;
   justify-content: center;
+}
+
+#todos {
+  padding: 10px;
+  background: #8bc34a;
+  color: whitesmoke;
+  list-style: none;
 }
