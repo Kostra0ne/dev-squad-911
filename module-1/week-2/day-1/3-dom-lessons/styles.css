@@ -19,6 +19,11 @@ body {
   */
 }
 
+.is-active {
+  color: firebrick;
+  font-weight: bold;
+}
+
 input[type="number"] {
   max-width: 80px;
 }

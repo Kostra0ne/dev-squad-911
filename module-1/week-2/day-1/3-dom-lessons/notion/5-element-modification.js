@@ -22,7 +22,7 @@ myInput.addEventListener("input", function () {
 });
 
 buttonAction4.addEventListener("click", function () {
-//   console.log("button has been clicked !");
+  // console.log("button has been clicked !");
   if (!pageBody.style.backgroundColor || pageBody.style.backgroundColor === "white") {
     pageBody.style.backgroundColor = "#3F51B5";
   } else {
