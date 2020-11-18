@@ -1,6 +1,8 @@
 class Human {
-  constructor(name) {
+  constructor(name, age) {
+    // consructor is a mold, factory for returned object
     this.name = name;
+    this.age = age;
   }
 
   greetings() {
@@ -9,8 +11,8 @@ class Human {
 }
 
 class Hero extends Human {
-  constructor(name, power) {
-    super(name);
+  constructor(name, age, power) {
+    super(name, age);
     this.power = power;
   }
 
@@ -19,8 +21,8 @@ class Hero extends Human {
   }
 }
 
-const gui = new Human("gui");
-const batman = new Hero("batman", "technologic gadgets");
+const gui = new Human("gui", 40);
+const batman = new Hero("batman", 55, "technologic gadgets");
 
-console.log(gui.greetings())
+console.log(gui.greetings());
 console.log(batman.greetings());

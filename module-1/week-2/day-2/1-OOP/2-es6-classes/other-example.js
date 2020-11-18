@@ -11,7 +11,7 @@ class House {
 
   howAreTheAgencyFee() {
     let msg;
-    if (this.agencyFees < 500) msg = "it's note expensive";
+    if (this.agencyFees < 500) msg = "it's not expensive";
     else msg = "it's a lot of money";
     return msg;
   }
