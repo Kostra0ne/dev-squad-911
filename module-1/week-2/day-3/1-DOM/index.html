@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="./index.js"></script>
+    <style>
+      #code-along-2 .list {
+        padding: 0;
+      }
+      
+      #code-along-2 .list li {
+        display: flex;
+        justify-content: space-around;
+        width: 100px;
+        padding: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      code along 2 a html page with one text-input one button and one empty list
+      <br />
+      when clicking on the button, i want to get access to the text-input
+      value<br />
+      if the input value is truthy, i want to add it in an array<br />
+      then i want to create as many lis as they are values in the array (one li
+      per value)
+      <br />
+      let's put a button for each li and listen to clicks on it<br />
+      When clicked, remove the targeted li;
+      <br />
+      Bonus: add reorder buttons (up/down) for each li and find a way to move
+      items in the parent ol.
+    </p>
+    <hr />
+
+    <div id="code-along-2">
+      <input class="input" type="text" placeholder="type here" />
+      <input class="btn" type="submit" value="go" />
+      <ol class="list"></ol>
+    </div>
+  </body>
+</html>
