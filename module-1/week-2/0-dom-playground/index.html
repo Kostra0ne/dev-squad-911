@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <header id="header-main">
+      <h1 class="title">D.O.M playground</h1>
+    </header>
+    <aside id="widgets">
+      <div class="flex-row align-center" id="inputs">
+        <input
+          class="input"
+          type="text"
+          id="input-text"
+          placeholder="input text here..."
+        />
+        <input
+          class="input"
+          type="number"
+          id="input-number"
+          value="0"
+          title="select number here"
+        />
+        <label for="input-color">color</label>
+        <input class="input" type="color" id="input-color" />
+        <label for="input-range">range</label>
+        <input class="input" type="range" id="input-range" />
+      </div>
+
+      <div class="flex-row align-center" id="buttons">
+        <button class="btn" id="btn-1">action 1</button>
+        <button class="btn" id="btn-2">action 2</button>
+        <button class="btn" id="btn-3">action 3</button>
+      </div>
+
+      <div id="checkboxes" class="flex-row align-center">
+        <label class="label" for="check-foo">foo</label>
+        <input class="input" type="checkbox" id="check-foo" />
+        <label class="label" for="ckeck-bar">bar</label>
+        <input class="input" type="checkbox" id="ckeck-bar" />
+        <label class="label" for="check-baz">baz</label>
+        <input class="input" type="checkbox" id="check-baz" />
+      </div>
+
+      <select name="" id="select-os">
+        <option value="-1" disabled selected>select O.S</option>
+        <option value="android">android</option>
+        <option value="bada">bada</option>
+        <option value="firefox os">firefox os</option>
+        <option value="ios">ios</option>
+      </select>
+
+      <div id="radios" class="flex-row align-center">
+        <label class="label" for="radio-yes">yes</label>
+        <input class="input" name="mood" type="radio" id="radio-yes" />
+        <label class="label" for="radio-no">no</label>
+        <input class="input" name="mood" type="radio" id="radio-no" />
+        <label class="label" for="radio-maybe">maybe</label>
+        <input
+          class="input"
+          name="mood"
+          type="radio"
+          id="radio-maybe"
+          checked
+        />
+      </div>
+    </aside>
+    <main>
+      <div id="demo">
+        <div class="square">
+          <div class="target"></div>
+        </div>
+        <div class="square">
+          <div class="target"></div>
+        </div>
+        <div class="square">
+          <div class="target"></div>
+        </div>
+      </div>
+      <div id="target-dom-manipulation"></div>
+    </main>
+  </body>
+</html>

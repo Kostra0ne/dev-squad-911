@@ -1,0 +1,14 @@
+.square {
+    border: 2px solid;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.square > .target {
+    border: 4px dashed;
+    background: var(--color-second);
+    height: 100px;
+    width: 100px;
+}
