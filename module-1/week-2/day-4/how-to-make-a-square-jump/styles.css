@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
+:root {
+  --enemy-height: 18px;
+  --enemy-width: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  height: 400px;
+  width: 400px;
+}
+
+#title {
+  grid-column: 2 /5;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+#board {
+  grid-column: 1 / 6;
+  grid-row: 2 / 7;
+  position: relative;
+  box-shadow: 0px 1.1px 0.6px 0px #101;
+}
+
+#life-bar {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clock {
+  grid-column: 2 / 5;
+  grid-row: 7 / 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#player {
+  position: absolute;
+  background: tomato;
+  height: 40px;
+  width: 40px;
+  bottom: 0;
+}
+
+/* https://animista.net/play/basic/flip-2  */
+
+@keyframes move-enemy {
+  0% {
+    transform: translateX(0px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateX(-380px) rotate(360deg);
+  }
+}
+
+.obstacle {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: dodgerblue;
+  bottom: 0;
+  right: 0;
+  animation: move-enemy 3s infinite alternate;
+}
