@@ -1,3 +1,5 @@
+// remember : functions are values !!!
+
 const f = function () {
   return "i'm the function's f return value";
 };

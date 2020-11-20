@@ -1,0 +1,26 @@
+:root {
+  --color-dark: #101;
+  --color-light: whitesmoke;
+  --color-main: tomato;
+  --color-secondary: darkslategray;
+  --space-s: 8px;
+  --space-m: 20px;
+  --space-l: 40px;
+}
+
+#header-main {
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-secondary);
+  height: 80px;
+}
+
+#content-main {
+  padding: var(--space-m);
+  background: var(--color-main);
+  height: 50vh;
+}
+
+.dark {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
