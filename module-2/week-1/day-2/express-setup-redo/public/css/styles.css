@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+
+body.is-active {
+  background: darkslateblue;
+  color: whitesmoke;
+}
+
+p {
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 748px;
+}
+
+.title {
+  color: dodgerblue;
+  margin: 20px 0 20px;
+}

@@ -1,0 +1,41 @@
+<h1 class="title">Homepage</h1>
+<p>
+    And the universal answer is .... {{universalAnswer}}
+</p>
+
+{{#if nodeRocks}}
+<p>
+    YEAH : NODE TOTALY ROCKS THE HOUSE
+</p>
+{{else}}
+<p>nahhh PHP is better than node</p>
+{{/if}}
+
+
+{{#unless nodeRocks}}
+<p>JAVA DOMINATES THE DEV WORLD !!!</p>
+{{/unless}}
+
+{{!-- 3 mustaches means : evaluate/generate some HTML markup --}}
+<hr>
+
+{{ extraHTMLMarkup }}
+
+{{{ extraHTMLMarkup }}}
+
+<hr>
+
+<img src="/img/moss-1.jpg" />
+<h2 class="title">DOM Challenge 2.1</h2>
+<hr>
+<button id="toggle-background">toggle bg</button>
+<hr>
+<p>
+    <b> You got 10 minutes to :</b><br>
+    - Create a <b>simple</b> DOM Script listening to clicks on a button#toggle-background.<br>
+    - <b>Verifiy</b> that the HTMLElement exists on the
+    document.<br>
+    - Handle clicks with a <b>callback</b> toggling a css is-active class, changing the body's background color
+    !<br><br>
+    <b>BONUS</b>: set a background image instead of color.
+</p>

@@ -1,0 +1,17 @@
+<h1 class="title">About</h1>
+<p>
+  The {{boss.role}} of this capitalistic venture is {{boss.name}} {{boss.lastname}} !
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam necessitatibus,
+  quisquam autem explicabo vitae asperiores earum accusamus cupiditate illum
+  ducimus minus ut quidem sequi consectetur, esse aperiam error et atque.
+</p>
+<hr>
+{{!-- In HBS each replaces forEach AND for...in  --}}
+{{#each employees}}
+<div class="employee">
+  <span>{{@index}} employee's name : </span> <b>{{ this.name }}</b><br /> is :
+  <span>{{this.role}}</span>
+</div>
+{{/each}}
