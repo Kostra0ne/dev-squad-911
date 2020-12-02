@@ -1,19 +1,20 @@
 const ironCart = (function () {
   "use strict";
-  let nameElement, priceElement, products;
+  let nameEl, priceEl, productsEl;
 
   function createProduct(evt) {
     evt.preventDefault(); // prevents page refresh on form submission
 
-    if (products.children[0].className === "empty-list")
-      products.innerHTML = "";
+    if (productsEl.children[0].className === "empty-list")
+      productsEl.innerHTML = "";
 
-    const name = nameElement.value;
-    const price = Number(priceElement.value);
+    const name = nameEl.value;
+    const price = Number(priceEl.value);
+
     const row = document.createElement("div");
-
     row.classList = "row product";
-    row.innerHTML = `<span class="label">${name}</span>
+    row.innerHTML = `
+    <span class="label">${name}</span>
     <span class="unit-price">${price}</span>
     <span class="quantity">QTY</span>
     <input class="input quantity" min="0" type="number" value="1">
@@ -30,35 +31,33 @@ const ironCart = (function () {
       updateTotal();
     };
 
-    products.appendChild(row);
+    productsEl.appendChild(row);
   }
 
   function deleteProduct(btn) {
     btn.parentElement.remove();
-    if (products.children.length === 0)
-      products.innerHTML = '<span class="empty-list">No products yet</span>';
+    if (productsEl.children.length === 0)
+      productsEl.innerHTML = '<span class="empty-list">No products yet</span>';
   }
 
   function updateTotal() {
     const totalEl = document.getElementById("price_total");
     const rowTotalEls = [...document.querySelectorAll(".row .total-price")];
-    totalEl.textContent = rowTotalEls.reduce(
-      (acc, el) => acc + Number(el.textContent.slice(1)),
-      0
-    );
+    totalEl.textContent = rowTotalEls
+      .reduce((acc, el) => acc + Number(el.textContent.slice(1)), 0)
+      .toFixed(2);
   }
 
   function updateSubTotal(input) {
     const priceEl = input.parentElement.querySelector(".unit-price");
-    const totalEl = input.nextElementSibling;
-    totalEl.textContent =
-      "$" + (Number(priceEl.textContent) * input.value).toFixed(2);
+    input.nextElementSibling.textContent =
+      "$" + Number(priceEl.textContent * input.value).toFixed(2);
   }
 
   function start() {
-    nameElement = document.getElementById("new_product_name");
-    priceElement = document.getElementById("new_product_price");
-    products = document.getElementById("list_products");
+    nameEl = document.getElementById("new_product_name");
+    priceEl = document.getElementById("new_product_price");
+    productsEl = document.getElementById("list_products");
     document.getElementById("btn_new_product").onclick = createProduct;
   }
 
