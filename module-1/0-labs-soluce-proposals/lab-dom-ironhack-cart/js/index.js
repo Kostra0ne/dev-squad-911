@@ -1,69 +1,64 @@
 const ironCart = (function () {
   "use strict";
+  let nameElement, priceElement, products;
 
-  var productList;
+  function createProduct(evt) {
+    evt.preventDefault(); // prevents page refresh on form submission
 
-  function appendProduct(infos) {
+    if (products.children[0].className === "empty-list")
+      products.innerHTML = "";
+
+    const name = nameElement.value;
+    const price = Number(priceElement.value);
     const row = document.createElement("div");
+
     row.classList = "row product";
-    row.innerHTML = `<span class="label">${infos.name}</span>
-    <span class="unit-price">${infos.price}</span>
+    row.innerHTML = `<span class="label">${name}</span>
+    <span class="unit-price">${price}</span>
     <span class="quantity">QTY</span>
     <input class="input quantity" min="0" type="number" value="1">
-    <span class="total-price">$${infos.price}</span>
+    <span class="total-price">$${price}</span>
     <button class="btn delete">delete</button>`;
 
     row.querySelector(".input.quantity").oninput = (e) => {
-      updateRowPrice(e.target);
-      updateTotalPrice();
+      updateSubTotal(e.target);
+      updateTotal();
     };
 
     row.querySelector(".btn.delete").onclick = (e) => {
       deleteProduct(e.target);
-      updateTotalPrice();
+      updateTotal();
     };
 
-    productList.appendChild(row);
-  }
-
-  function createProduct(evt) {
-    evt.preventDefault(); // prevents page refresh on form submission
-    const nameElement = document.getElementById("new_product_name");
-    const priceElement = document.getElementById("new_product_price");
-
-    if (productList.children[0].className === "empty-list")
-      productList.innerHTML = "";
-
-    appendProduct({
-      name: nameElement.value,
-      price: Number(priceElement.value),
-    });
+    products.appendChild(row);
   }
 
   function deleteProduct(btn) {
     btn.parentElement.remove();
-    if (productList.children.length === 0)
-      productList.innerHTML = '<span class="empty-list">No products yet</span>';
+    if (products.children.length === 0)
+      products.innerHTML = '<span class="empty-list">No products yet</span>';
   }
 
-  function updateTotalPrice() {
+  function updateTotal() {
     const totalEl = document.getElementById("price_total");
     const rowTotalEls = [...document.querySelectorAll(".row .total-price")];
-
     totalEl.textContent = rowTotalEls.reduce(
       (acc, el) => acc + Number(el.textContent.slice(1)),
       0
     );
   }
 
-  function updateRowPrice(input) {
+  function updateSubTotal(input) {
     const priceEl = input.parentElement.querySelector(".unit-price");
     const totalEl = input.nextElementSibling;
-    totalEl.textContent = "$" + Number(priceEl.textContent) * input.value;
+    totalEl.textContent =
+      "$" + (Number(priceEl.textContent) * input.value).toFixed(2);
   }
 
   function start() {
-    productList = document.getElementById("list_products");
+    nameElement = document.getElementById("new_product_name");
+    priceElement = document.getElementById("new_product_price");
+    products = document.getElementById("list_products");
     document.getElementById("btn_new_product").onclick = createProduct;
   }
 
