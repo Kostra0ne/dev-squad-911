@@ -1,47 +1,28 @@
-const ironCart = (function() {
+const ironCart = (function () {
   "use strict";
 
   var productList;
 
   function appendProduct(infos) {
-    // step 1 : create all row elements
     const row = document.createElement("div");
-    const label = document.createElement("span");
-    const price = document.createElement("span");
-    const quantityLabel = document.createElement("span");
-    const quantity = document.createElement("input");
-    const priceTotal = document.createElement("span");
-    const button = document.createElement("button");
-    const qty = 1;
-    // step 2 : setup row's elements
-    quantity.type = "number";
-    row.className = "row product";
-    label.className = "label";
-    label.textContent = infos.name;
-    price.className = "unit-price";
-    price.textContent = infos.price;
-    quantityLabel.className = "quantity";
-    quantityLabel.textContent = "QTY";
-    quantity.className = "input quantity";
-    quantity.value = qty;
-    quantity.min = 0;
-    quantity.oninput = updateRowPrice;
-    priceTotal.className = "total-price";
-    priceTotal.textContent = `$${qty * infos.price}`;
-    button.className = "btn delete";
-    button.textContent = "delete";
-    button.onclick = deleteProduct;
-    // step 3 : add extra markup
-    price.innerHTML = `<span class="currency">$</span><span class="val">${
-      infos.price
-    }</span>`;
-    // build a product row
-    row.appendChild(label);
-    row.appendChild(price);
-    row.appendChild(quantityLabel);
-    row.appendChild(quantity);
-    row.appendChild(priceTotal);
-    row.appendChild(button);
+    row.classList = "row product";
+    row.innerHTML = `<span class="label">${infos.name}</span>
+    <span class="unit-price">${infos.price}</span>
+    <span class="quantity">QTY</span>
+    <input class="input quantity" min="0" type="number" value="1">
+    <span class="total-price">$${infos.price}</span>
+    <button class="btn delete">delete</button>`;
+
+    row.querySelector(".input.quantity").oninput = (e) => {
+      updateRowPrice(e.target);
+      updateTotalPrice();
+    };
+
+    row.querySelector(".btn.delete").onclick = (e) => {
+      deleteProduct(e.target);
+      updateTotalPrice();
+    };
+
     productList.appendChild(row);
   }
 
@@ -55,17 +36,14 @@ const ironCart = (function() {
 
     appendProduct({
       name: nameElement.value,
-      price: Number(priceElement.value)
+      price: Number(priceElement.value),
     });
-    updateTotalPrice();
   }
 
-  function deleteProduct(evt) {
-    const target = evt.target || evt.srcElement;
-    target.parentElement.remove();
+  function deleteProduct(btn) {
+    btn.parentElement.remove();
     if (productList.children.length === 0)
       productList.innerHTML = '<span class="empty-list">No products yet</span>';
-    updateTotalPrice();
   }
 
   function updateTotalPrice() {
@@ -78,17 +56,13 @@ const ironCart = (function() {
     );
   }
 
-  function updateRowPrice(e) {
-    const quantity = e.target || e.srcElement;
-    const priceEl = quantity.parentElement.querySelector(".unit-price");
-    const totalEl = quantity.nextElementSibling;
-    const priceU = Number(priceEl.textContent.slice(1));
-    totalEl.textContent = `$${priceU * quantity.value}`;
-    updateTotalPrice();
+  function updateRowPrice(input) {
+    const priceEl = input.parentElement.querySelector(".unit-price");
+    const totalEl = input.nextElementSibling;
+    totalEl.textContent = "$" + Number(priceEl.textContent) * input.value;
   }
 
   function start() {
-    // there is only one 'load' event per document
     productList = document.getElementById("list_products");
     document.getElementById("btn_new_product").onclick = createProduct;
   }
