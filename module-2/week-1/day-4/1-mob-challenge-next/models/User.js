@@ -6,10 +6,15 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  email: String,
+  email: {
+    type: String,
+    unique: true
+  },
   favLang: String,
 });
 
+
+// below : user is the collection name (mongo will append a s to user => users)
 const UserModel = mongoose.model("user", userSchema);
 
 module.exports = UserModel;

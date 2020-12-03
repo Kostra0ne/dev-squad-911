@@ -15,11 +15,15 @@ const users = [
 // CRUD methods are embeded in ANY model generated with mongoose
 // important note : every mongoose model's method return a Promise
 
-(async function insertTestUsers() {
+async function insertTestUsers() {
   try {
-    await UserModel.deleteMany({});
-    await UserModel.insertMany(users);
+    await UserModel.deleteMany(); // empty the users db collection
+    const insertedUsers = await UserModel.insertMany(users); // insert docs in db
+    console.log("test users seed done !");
+    console.log(insertedUsers);
   } catch (err) {
     console.error(err);
   }
-}())
+}
+
+insertTestUsers();
