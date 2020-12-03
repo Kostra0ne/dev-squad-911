@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./app.js -e .hbs,.js"
+    "dev": "nodemon ./app.js -e .hbs,.js",
+    "seed:user": "node ./bin/seed-user"
   },
   "author": "",
   "license": "ISC",
