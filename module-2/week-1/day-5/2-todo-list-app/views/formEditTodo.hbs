@@ -1,0 +1,23 @@
+<h1>edit todo</h1>
+<form method="post" action="/todo/edit/{{_id}}">
+    <label for="task">task</label>
+    <input id="task" name="task" type="text" value="{{task}}">
+    {{#if status}}
+    <div>
+        <label for="done">done ?</label>
+        <input type="radio" name="status" id="done" value="true" checked>
+        <label for="pending">pending ?</label>
+        <input type="radio" name="status" id="pending" value="false">
+        {{else}}
+        <div>
+            <label for="done">done ?</label>
+            <input type="radio" name="status" id="done" value="true">
+            <label for="pending">pending ?</label>
+            <input type="radio" name="status" id="pending" value="false" checked>
+        </div>
+    </div>
+    {{/if}}
+    <div>
+        <button>modify todo</button>
+    </div>
+</form>

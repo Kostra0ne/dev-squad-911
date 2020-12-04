@@ -2,10 +2,12 @@ body {
   font-family: Avenir;
 }
 
-.restaurant-card {
-  border: 1px solid;
-  padding: 10px;
-  margin-bottom: 20px;
+#todo-list .item.pending {
+  color: firebrick;
+}
+
+#todo-list .item.done {
+  color: green;
 }
 
 .form.samples.kit .instrument {
