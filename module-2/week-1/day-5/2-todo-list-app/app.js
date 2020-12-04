@@ -10,7 +10,7 @@ const TodoModel = require("./models/Todo");
 // file allowed for browser download
 app.use(express.static(__dirname + "/public"));
 // accept incoming post values and expose the in req.body
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 // view engine setup
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
@@ -39,7 +39,7 @@ app.post("/todo", async (req, res) => {
 });
 
 app.get("/todo/edit/:id", async (req, res) => {
-  const todoToEdit = await TodoModel.findOne({_id: req.params.id})
+  const todoToEdit = await TodoModel.findOne({ _id: req.params.id });
   res.render("formEditTodo", todoToEdit);
 });
 
@@ -47,7 +47,7 @@ app.post("/todo/edit/:id", async (req, res) => {
   try {
     await TodoModel.findByIdAndUpdate(req.params.id, req.body);
     res.redirect("/");
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 });
