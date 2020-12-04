@@ -11,30 +11,12 @@
     {{#if this.status}}
     <li class="item done">
         <span>{{this.task}}</span>
-        <div class="btns">
-            <form method="post" action="/todo/delete/{{this._id}}">
-                <button>x</button>
-            </form>
-            <a href="/todo/edit/{{this._id}}">
-                <button>
-                    <span>e</span>
-                </button>
-            </a>
-        </div>
+        {{> btns this }}
     </li>
     {{else}}
     <li class="item pending">
         <span>{{this.task}}</span>
-        <div class="btns">
-            <form method="post" action="/todo/delete/{{this._id}}">
-                <button>x</button>
-            </form>
-            <a href="/todo/edit/{{this._id}}">
-                <button>
-                    <span>e</span>
-                </button>
-            </a>
-        </div>
+        {{> btns this }}
     </li>
     {{/if}}
     {{/each}}
