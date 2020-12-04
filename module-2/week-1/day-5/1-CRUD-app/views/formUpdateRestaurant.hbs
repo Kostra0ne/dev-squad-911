@@ -1,0 +1,26 @@
+<form method="post" action="/restaurant/{{_id}}" class="form">
+    <h1>update resto {{name}}</h1>
+    <label for="resto-name">name</label>
+    <input class="input" id="resto-name" type="text" name="name" value="{{name}}">
+    <label for="resto-specialty">specialty</label>
+    <input class="input" id="resto-specialty" type="text" name="specialty" value="{{specialty}}">
+    <div>
+        <label>is vegan ?</label>
+        <label for="is-vegan">yes</label>
+        <input id="is-vegan" name="isVegan" type="radio" value="true">
+        <label for="is-not-vegan">no</label>
+        <input id="is-not-vegan" name="isVegan" type="radio" value="false" checked>
+    </div>
+    <label for="resto-city">city</label>
+    <input class="input" id="resto-city" type="text" name="city" value="{{city}}">
+    <label for="resto-country">country</label>
+    <input class="input" id="resto-country" type="text" name="country" value="{{country}}">
+    <label for="resto-street">street</label>
+    <input class="input" id="resto-street" type="text" name="street" value="{{street}}">
+    <label for="resto-street-nb">street number</label>
+    <input class="input" id="resto-street-nb" type="number" name="streetNumber" value="{{streetNumber}}">
+    <label for="resto-zipcode">zipcode</label>
+    <input class="input" id="resto-zipcode" type="text" name="zipcode" value="{{zipcode}}">
+
+    <button class="btn">update !</button>
+</form>

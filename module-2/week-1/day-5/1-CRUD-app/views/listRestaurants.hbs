@@ -1,0 +1,9 @@
+<h1>All restos</h1>
+{{#each allRestos}}
+<div class="restaurant-card">
+    {{this.name}} - {{this.specialty}} ({{this.city}})<br>
+    <a href="/restaurant/{{this._id}}">details</a><br>
+    <a href="/restaurant/update/{{this._id}}">update</a><br>
+    <a href="/restaurant/delete/{{this._id}}">remove</a><br>
+</div>
+{{/each}}
