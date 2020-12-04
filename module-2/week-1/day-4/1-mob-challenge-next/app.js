@@ -15,7 +15,10 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 
-// C.R.U.D (CREATE READ UPDATE DELETE)
+// SIMPLE C.R.U.D APP (CREATE READ UPDATE DELETE)
+// SO FAR ... we only did a CRD :D
+// the update (U) part is coming tomorrow
+
 
 app.get("/", (req, res) => {
   res.render("home", { images });
