@@ -1,0 +1,15 @@
+<form method="post" action="/create-robot">
+    <h1>create new robot</h1>
+    <input type="text" name="chip" placeholder="chip..." />
+    <input type="text" name="name" placeholder="name..." />
+    <input type="number" name="price" placeholder="price..." />
+    <p>
+        <label for="">speech enabled ?</label>
+        <label for="speech_enabled">yes</label>
+        <input id="speech_enabled" type="radio" name="speechEnabled" value="yes" />
+        <label for="speech_not_enabled">no</label>
+        <input id="speech_not_enabled" type="radio" name="speechEnabled" value="no" />
+    </p>
+    <input type="text" name="features" placeholder="features separated with commas..." />
+    <button>create !</button>
+</form>

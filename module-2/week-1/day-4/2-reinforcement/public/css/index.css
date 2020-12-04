@@ -1,0 +1,23 @@
+body {
+  font-family: Avenir;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+form input[type=text] {
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+form button {
+  width: 120px;
+  height: 32px;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

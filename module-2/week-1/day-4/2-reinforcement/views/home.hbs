@@ -1,0 +1,13 @@
+<h1>home of the robots</h1>
+
+{{!-- display all robots !!! --}}
+<ul>
+    {{#each robots}}
+    <li>
+        {{this.name}}
+        {{this.chip}}
+        <a href="/robots/{{this.name}}">view details...</a>
+        <a href="/robots/delete/{{this._id}}">x</a>
+    </li>
+    {{/each}}
+</ul>
