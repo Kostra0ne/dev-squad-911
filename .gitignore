@@ -2,7 +2,7 @@
 0-random/
 0-random-group/
 node_modules/
-
+.env
 module-1/week-2/day-1/dom-playground
 
 module-2/labs-soluce-proposals/lab-es6-promises

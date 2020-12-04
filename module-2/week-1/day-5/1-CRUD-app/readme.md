@@ -1,5 +1,5 @@
 
-tech talk : what the heck does MVC stands for ?
+tech talk : what the heck does M.V.C stands for ?
 -----------------------------------
 code along : create a CRUD app with 1 collection
 -----------------------------------
@@ -28,13 +28,14 @@ config express.urlencoded
 - likes
 
 # Controllers (app routes)
-GET  /
+GET  /home
 GET  /restaurant
 GET  /restaurant/:id
 GET  /restaurant/delete/:id
-GET  /api/restaurant (as json array)
 POST /restaurant
 POST /restaurant/:id
+
+BONUS: GET  /api/restaurant (as json array)
 
 # Views
 code a basic homepage

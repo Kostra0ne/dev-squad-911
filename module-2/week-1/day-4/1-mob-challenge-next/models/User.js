@@ -17,6 +17,6 @@ const userSchema = new Schema({
 // below : user is the collection name (mongo will append a s to user => users)
 const UserModel = mongoose.model("user", userSchema);
 
-module.exports = UserModel;
+module.exports = UserModel; // is an object containing all usefull function for CRUD
 
 //  one user structure :  { name: "foo", email: "foo@foo.foo", favLang: "JS" },
