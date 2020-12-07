@@ -1,0 +1,17 @@
+<h1 class="title">All labels</h1>
+{{#unless labels.length}}
+<p>
+    sorry, no labels available yet :/
+</p>
+{{/unless}}
+<ul class="list">
+    {{#each labels}}
+    <li class="item card">
+        <h2 class="li">{{this.name}}</h2>
+        <div class="icons">
+            <a href="/dashboard/labels/update/{{this._id}}" class="fa fa-pen"></a>
+            <a href="/dashboard/labels/delete/{{this._id}}" class="fa fa-trash"></a>
+        </div>
+    </li>
+    {{/each}}
+</ul>
