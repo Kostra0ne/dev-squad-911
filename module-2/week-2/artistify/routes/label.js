@@ -23,6 +23,16 @@ router.get("/create", (req, res) => {
   res.render("labelCreate");
 });
 
+// GET - /dashboard/labels/:id
+router.get("/:id", async (req, res) => {
+  try {
+    const label = await LabelModel.findById(req.params.id);
+    res.render("labelDetails", label);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // GET /dashboard/labels/update/:id
 router.get("/update/:id", async (req, res, next) => {
   try {
@@ -47,8 +57,14 @@ router.get("/delete/:id", async (req, res, next) => {
 // POST - /dashboard/labels/create
 router.post("/create", uploader.single("logo"), async (req, res, next) => {
   // if all good, multer will expose the uploaded object in req.file
+  // req.file.path leads to an URL hosting the image @cloudinary
   const newLabel = { ...req.body };
-  newLabel.logo = req.file.path || null; // req.file.path leads to an URL hosting the image @cloudinary
+  if (req.file) {
+    newLabel.logo = req.file.path;
+  } else {
+    newLabel.logo = null;
+  }
+
   try {
     await LabelModel.create(newLabel);
     res.redirect("/dashboard/labels");
@@ -64,11 +80,9 @@ router.post("/update/:id", uploader.single("logo"), async (req, res, next) => {
     labelToUpdate.logo = req.file.path; // req.file.path leads to an URL hosting the image @cloudinary
   }
   try {
-    await LabelModel.findByIdAndUpdate(
-      req.params.id,
-      labelToUpdate,
-      { new: true }
-    );
+    await LabelModel.findByIdAndUpdate(req.params.id, labelToUpdate, {
+      new: true,
+    });
     res.redirect("/dashboard/labels");
   } catch (err) {
     next(err);
