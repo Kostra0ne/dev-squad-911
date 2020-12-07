@@ -1,6 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const LabelModel = require("./../model/Label");
+const uploader = require("./../config/cloudinary");
 
 // GET - /dashboard/labels
 router.get("/", async (req, res, next) => {
@@ -44,20 +45,28 @@ router.get("/delete/:id", async (req, res, next) => {
 });
 
 // POST - /dashboard/labels/create
-router.post("/create", async (req, res, next) => {
+router.post("/create", uploader.single("logo"), async (req, res, next) => {
+  // if all good, multer will expose the uploaded object in req.file
+  const newLabel = { ...req.body };
+  newLabel.logo = req.file.path || null; // req.file.path leads to an URL hosting the image @cloudinary
   try {
-    await LabelModel.create(req.body);
+    await LabelModel.create(newLabel);
     res.redirect("/dashboard/labels");
   } catch (err) {
     next(err); // express will display the error on the provided error page (error.hbs) (check the www file for details ....)
   }
 });
 
-router.post("/update/:id", async (req, res, next) => {
+router.post("/update/:id", uploader.single("logo"), async (req, res, next) => {
+  const labelToUpdate = { ...req.body };
+  if (req.file && req.file.path) {
+    // this will be done ONLY if we uploaded a new image, else, let's keep the previous logo
+    labelToUpdate.logo = req.file.path; // req.file.path leads to an URL hosting the image @cloudinary
+  }
   try {
-    const updatedLabel = await LabelModel.findByIdAndUpdate(
+    await LabelModel.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      labelToUpdate,
       { new: true }
     );
     res.redirect("/dashboard/labels");
