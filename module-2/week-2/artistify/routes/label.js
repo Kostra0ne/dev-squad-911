@@ -23,9 +23,13 @@ router.get("/create", (req, res) => {
 });
 
 // GET /dashboard/labels/update/:id
-router.get("/dashboard/labels/update/:id", (req, res) => {
-  // fetch the label to update
-  res.send("todo display update form"); // pass the found label to the view
+router.get("/update/:id", async (req, res, next) => {
+  try {
+    const label = await LabelModel.findById(req.params.id); // fetch the label to update
+    res.render("labelUpdate", label); // pass the found label to the view
+  } catch (err) {
+    next(err); // if an error occurs, display it on error.hbs page
+  }
 });
 
 // GET /dashboard/labels/delete/:id
@@ -33,7 +37,7 @@ router.get("/delete/:id", async (req, res, next) => {
   try {
     // use the model to delete one label by id
     await LabelModel.findByIdAndDelete(req.params.id);
-    res.redirect("/dashboard/labels"); // then redirect to label full list
+    res.redirect("/dashboard/labels"); // then redirect to labels full list
   } catch (err) {
     next(err);
   }
@@ -46,6 +50,19 @@ router.post("/create", async (req, res, next) => {
     res.redirect("/dashboard/labels");
   } catch (err) {
     next(err); // express will display the error on the provided error page (error.hbs) (check the www file for details ....)
+  }
+});
+
+router.post("/update/:id", async (req, res, next) => {
+  try {
+    const updatedLabel = await LabelModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.redirect("/dashboard/labels");
+  } catch (err) {
+    next(err);
   }
 });
 

@@ -13,11 +13,16 @@ export function checkCollision(damageCallback) {
   const shapes = obstacles.get();
 
   for (let i = 0; i < shapes.length; i += 1) {
+    // console.log(i, shapes[i]);
     const shapeRect = shapes[i].element.getBoundingClientRect();
     const matchX = shapeRect.x >= playerRect.x && shapeRect.x <= playerRect.x1;
     const matchY = shapeRect.y >= playerRect.y && shapeRect.y <= playerRect.y1;
+    
+    console.log(shapeRect.x, playerRect.x);
+    // console.log(matchX && matchY);
 
     if (matchX && matchY) {
+      console.log(shapes[i].damage);
       damageCallback(shapes[i].damage);
     }
   }

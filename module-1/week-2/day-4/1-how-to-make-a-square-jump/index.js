@@ -15,6 +15,7 @@ function draw() {
   player.draw();
 
   world.checkCollision((damage) => {
+    console.log(damage);
     if (damage) {
       player.hurt(damage);
       world.setLife(player.life);
