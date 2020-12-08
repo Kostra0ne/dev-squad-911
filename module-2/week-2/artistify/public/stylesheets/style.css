@@ -4,9 +4,22 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+  text-decoration: none;
 }
 
 .is-hidden {
   display: none;
+}
+
+
+#logo-main a {
+  font-size: 1.4rem;
+  color: inherit;
+}
+
+#header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

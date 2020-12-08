@@ -3,7 +3,7 @@ const router = new express.Router();
 const LabelModel = require("./../model/Label");
 const uploader = require("./../config/cloudinary");
 
-// GET - /dashboard/labels
+// GET - /dashboard/label
 router.get("/", async (req, res, next) => {
   try {
     // try to find all labels stored in labels collection
@@ -18,12 +18,12 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// GET - /dashboard/labels/create
+// GET - /dashboard/label/create
 router.get("/create", (req, res) => {
   res.render("labelCreate");
 });
 
-// GET - /dashboard/labels/:id
+// GET - /dashboard/label/:id
 router.get("/:id", async (req, res) => {
   try {
     const label = await LabelModel.findById(req.params.id);
@@ -33,7 +33,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// GET /dashboard/labels/update/:id
+// GET /dashboard/label/update/:id
 router.get("/update/:id", async (req, res, next) => {
   try {
     const label = await LabelModel.findById(req.params.id); // fetch the label to update
@@ -43,18 +43,18 @@ router.get("/update/:id", async (req, res, next) => {
   }
 });
 
-// GET /dashboard/labels/delete/:id
+// GET /dashboard/label/delete/:id
 router.get("/delete/:id", async (req, res, next) => {
   try {
     // use the model to delete one label by id
     await LabelModel.findByIdAndDelete(req.params.id);
-    res.redirect("/dashboard/labels"); // then redirect to labels full list
+    res.redirect("/dashboard/label"); // then redirect to labels full list
   } catch (err) {
     next(err);
   }
 });
 
-// POST - /dashboard/labels/create
+// POST - /dashboard/label/create
 router.post("/create", uploader.single("logo"), async (req, res, next) => {
   // if all good, multer will expose the uploaded object in req.file
   // req.file.path leads to an URL hosting the image @cloudinary
@@ -67,7 +67,7 @@ router.post("/create", uploader.single("logo"), async (req, res, next) => {
 
   try {
     await LabelModel.create(newLabel);
-    res.redirect("/dashboard/labels");
+    res.redirect("/dashboard/label");
   } catch (err) {
     next(err); // express will display the error on the provided error page (error.hbs) (check the www file for details ....)
   }
@@ -83,7 +83,7 @@ router.post("/update/:id", uploader.single("logo"), async (req, res, next) => {
     await LabelModel.findByIdAndUpdate(req.params.id, labelToUpdate, {
       new: true,
     });
-    res.redirect("/dashboard/labels");
+    res.redirect("/dashboard/label");
   } catch (err) {
     next(err);
   }

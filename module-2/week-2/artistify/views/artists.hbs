@@ -1,0 +1,14 @@
+<h1>All artists</h1>
+{{#unless artists.length}}
+<p>sorry, no artists yet</p>
+{{/unless}}
+{{#each artists}}
+<div class="card artist">
+    {{this.name}}
+    <span class="btns">
+        <a href="/dashboard/artist/{{this._id}}" class="fa fa-eye"></a>
+        <a href="/dashboard/artist/update/{{this._id}}" class="fa fa-pen"></a>
+        <a href="/dashboard/artist/delete/{{this._id}}" class="fa fa-trash"></a>
+    </span>
+</div>
+{{/each}}

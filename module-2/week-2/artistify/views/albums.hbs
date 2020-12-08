@@ -1,0 +1,14 @@
+<h1>All albums</h1>
+{{#unless albums.length}}
+<p>sorry, no albums yet</p>
+{{/unless}}
+{{#each albums}}
+<div class="card album">
+    {{this.title}}
+    <span class="btns">
+        <a href="/dashboard/album/{{this._id}}" class="fa fa-eye"></a>
+        <a href="/dashboard/album/update/{{this._id}}" class="fa fa-pen"></a>
+        <a href="/dashboard/album/delete/{{this._id}}" class="fa fa-trash"></a>
+    </span>
+</div>
+{{/each}}
