@@ -1,18 +1,23 @@
-<h1 class="title">All labels</h1>
+<h1 class="title">
+    <span>All labels</span>
+    <a href="/dashboard/label/create" class="link label"><i class="fa fa-plus"></i></a>
+</h1>
+<hr>
+
 {{#unless labels.length}}
 <p>
     sorry, no labels available yet :/
 </p>
 {{/unless}}
-<ul class="list">
-    {{#each labels}}
-    <li class="item card">
-        <h2 class="li">{{this.name}}</h2>
-        <div class="icons">
-            <a href="/dashboard/label/{{this._id}}" class="fa fa-eye"></a>
-            <a href="/dashboard/label/update/{{this._id}}" class="fa fa-pen"></a>
-            <a href="/dashboard/label/delete/{{this._id}}" class="fa fa-trash"></a>
-        </div>
-    </li>
-    {{/each}}
-</ul>
+
+{{#each labels}}
+<div class="row label">
+    <img class="thumbnail" src="{{this.logo}}" alt="{{this.name}}'s logo'">
+    <span class="li">{{this.name}}</span>
+    <span class="icons">
+        <a href="/dashboard/label/{{this._id}}" class="fa fa-eye"></a>
+        <a href="/dashboard/label/update/{{this._id}}" class="fa fa-pen"></a>
+        <a href="/dashboard/label/delete/{{this._id}}" class="fa fa-trash"></a>
+    </span>
+</div>
+{{/each}}

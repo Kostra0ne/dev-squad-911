@@ -62,7 +62,7 @@ router.post("/create", uploader.single("logo"), async (req, res, next) => {
   if (req.file) {
     newLabel.logo = req.file.path;
   } else {
-    newLabel.logo = null;
+    newLabel.logo = undefined;
   }
 
   try {
@@ -73,7 +73,7 @@ router.post("/create", uploader.single("logo"), async (req, res, next) => {
   }
 });
 
-router.post("/update/:id", uploader.single("logo"), async (req, res, next) => {
+router.post("/:id", uploader.single("logo"), async (req, res, next) => {
   const labelToUpdate = { ...req.body };
   if (req.file && req.file.path) {
     // this will be done ONLY if we uploaded a new image, else, let's keep the previous logo

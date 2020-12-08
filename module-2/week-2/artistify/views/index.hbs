@@ -1,9 +1,30 @@
-<h1>Home of music</h1>
+<h1 class="title">Home of music</h1>
 <p>
     Music is life, blabla... <b>welcome !</b>
 </p>
-<p>
-    todo : display below the 3 last inserted Artists.<br>
-    todo : display below the 3 last inserted Albums.<br>
+
+<hr>
+
+<p class="todo">
+    <b>todo</b> : add a route to display each resource"s details (artists, albums, labels)
 </p>
 
+<hr>
+
+{{#if lastArtists.length}}
+<h2 class="title">latest artists</h2>
+{{#each lastArtists}}
+<div class="card artist">
+    <span>{{this.name}}</span>
+</div>
+{{/each}}
+{{/if}}
+
+{{#if lastAlbums.length}}
+<h2 class="title">latest albums</h2>
+{{#each lastAlbums}}
+<div class="card album">
+    <span>{{this.title}}</span>
+</div>
+{{/each}}
+{{/if}}

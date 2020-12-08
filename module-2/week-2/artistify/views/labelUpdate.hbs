@@ -1,4 +1,4 @@
-<form method="post" action="/dashboard/labels/update/{{_id}}" enctype="multipart/form-data"  class="form">
+<form method="post" action="/dashboard/label/{{_id}}" enctype="multipart/form-data" class="form">
     <h1 class="title">Edit the new label</h1>
     <label class="label" for="name">label name</label>
     <input class="input" id="name" type="text" value="{{name}}" name="name">
@@ -16,6 +16,11 @@
         <span>label's logo</span>
         <i class="icon fas fa-cloud-upload-alt fa-2x"></i>
     </label>
+
+    <img class="preview" src="{{logo}}" alt="{{name}}'s logo'">
+
+    <hr>
+
     <input class="is-hidden" id="logo" type="file" name="logo">
     <button class="btn">update</button>
 </form>

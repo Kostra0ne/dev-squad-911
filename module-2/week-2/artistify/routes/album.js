@@ -60,10 +60,10 @@ router.post("/", uploader.single("cover"), async (req, res, next) => {
 });
 
 // POST - update one album
-router.post("/update/:id", uploader.single("cover"), async (req, res, next) => {
+router.post("/:id", uploader.single("cover"), async (req, res, next) => {
   try {
     const albumToUpdate = { ...req.body };
-    if (req.file) albumToUpdate.picture = req.file.path;
+    if (req.file) albumToUpdate.cover = req.file.path;
 
     await AlbumModel.findByIdAndUpdate(req.params.id, albumToUpdate);
     res.redirect("/dashboard/album");

@@ -63,7 +63,7 @@ router.post("/", uploader.single("picture"), async (req, res, next) => {
 
 // POST - update one artist
 router.post(
-  "/update/:id",
+  "/:id",
   uploader.single("picture"),
   async (req, res, next) => {
     try {

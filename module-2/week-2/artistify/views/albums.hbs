@@ -1,10 +1,15 @@
-<h1>All albums</h1>
+<h1 class="title">
+    <span>All albums</span>
+    <a href="/dashboard/album/create" class="link album"><i class="fa fa-plus"></i></a>
+</h1>
+<hr>
 {{#unless albums.length}}
 <p>sorry, no albums yet</p>
 {{/unless}}
 {{#each albums}}
-<div class="card album">
-    {{this.title}}
+<div class="row album">
+    <img class="thumbnail" src="{{this.cover}}" alt="{{this.title}}'s cover'">
+    <span>{{this.title}}</span>
     <span class="btns">
         <a href="/dashboard/album/{{this._id}}" class="fa fa-eye"></a>
         <a href="/dashboard/album/update/{{this._id}}" class="fa fa-pen"></a>

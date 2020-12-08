@@ -23,6 +23,16 @@
 
 # day 3
 
+- simple search : understand req.query
+- understand middlewares (and write custom ones)
+- discover tools : httpie + postman
 - learn AJAX
-- apply to music styles : create a DOM script + server handling to CRUD styles
+- apply to music styles : create a DOM script + server CRUD handling
+
+
+# day 4
+- use hbs custom helpers
+- signup / signin / signout
+- protect routes
+- expose logged in infos in the views with middleware functions
 

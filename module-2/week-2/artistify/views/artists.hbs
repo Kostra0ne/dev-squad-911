@@ -1,10 +1,15 @@
-<h1>All artists</h1>
+<h1 class="title">
+    <span>All artists</span>
+    <a href="/dashboard/artist/create" class="link artist"><i class="fa fa-plus"></i></a>
+</h1>
+<hr>
 {{#unless artists.length}}
 <p>sorry, no artists yet</p>
 {{/unless}}
 {{#each artists}}
-<div class="card artist">
-    {{this.name}}
+<div class="row artist">
+    <img class="thumbnail" src="{{this.picture}}" alt="{{this.name}}'s picture'">
+    <span>{{this.name}}</span>
     <span class="btns">
         <a href="/dashboard/artist/{{this._id}}" class="fa fa-eye"></a>
         <a href="/dashboard/artist/update/{{this._id}}" class="fa fa-pen"></a>
