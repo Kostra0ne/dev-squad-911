@@ -12,8 +12,10 @@
 
 {{#each labels}}
 <div class="row label">
-    <img class="thumbnail" src="{{this.logo}}" alt="{{this.name}}'s logo'">
-    <span class="li">{{this.name}}</span>
+    <div class="infos">
+        <img class="thumbnail" src="{{this.logo}}" alt="{{this.name}}'s picture'">
+        <span>{{this.name}}</span>
+    </div>
     <span class="icons">
         <a href="/dashboard/label/{{this._id}}" class="fa fa-eye"></a>
         <a href="/dashboard/label/update/{{this._id}}" class="fa fa-pen"></a>

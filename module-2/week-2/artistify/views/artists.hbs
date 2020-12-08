@@ -8,8 +8,10 @@
 {{/unless}}
 {{#each artists}}
 <div class="row artist">
-    <img class="thumbnail" src="{{this.picture}}" alt="{{this.name}}'s picture'">
-    <span>{{this.name}}</span>
+    <div class="infos">
+        <img class="thumbnail" src="{{this.picture}}" alt="{{this.name}}'s picture'">
+        <span>{{this.name}}</span>
+    </div>
     <span class="btns">
         <a href="/dashboard/artist/{{this._id}}" class="fa fa-eye"></a>
         <a href="/dashboard/artist/update/{{this._id}}" class="fa fa-pen"></a>

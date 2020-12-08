@@ -8,8 +8,10 @@
 {{/unless}}
 {{#each albums}}
 <div class="row album">
-    <img class="thumbnail" src="{{this.cover}}" alt="{{this.title}}'s cover'">
-    <span>{{this.title}}</span>
+    <div class="infos">
+        <img class="thumbnail" src="{{this.cover}}" alt="{{this.title}}'s cover'">
+        <span>{{this.title}}</span>
+    </div>
     <span class="btns">
         <a href="/dashboard/album/{{this._id}}" class="fa fa-eye"></a>
         <a href="/dashboard/album/update/{{this._id}}" class="fa fa-pen"></a>

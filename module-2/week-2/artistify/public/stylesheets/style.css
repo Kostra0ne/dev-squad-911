@@ -37,6 +37,23 @@ hr {
   display: none;
 }
 
+
+.row.artist,
+.row.album,
+.row.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.artist .infos,
+.row.album .infos,
+.row.label .infos {
+  display: flex;
+  align-items: center;
+}
+
+
 .title {
   font-size: 1.4rem;
   margin-top: 10px;
