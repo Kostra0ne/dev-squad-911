@@ -1,6 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Avenir;
 }
 
 a {
@@ -8,18 +12,37 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
 .is-hidden {
   display: none;
+}
+
+.title {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
 #logo-main a {
   font-size: 1.4rem;
-  color: inherit;
+  color: white;
 }
 
 #header-main {
+  padding: 5px 20px;
+  background: #101;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#content-main {
+  padding: 5px 20px;
 }
