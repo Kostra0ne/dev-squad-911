@@ -52,7 +52,6 @@ router.get("/all-albums/:id", async (req, res, next) => {
 
 router.get("/search", async (req, res, next) => {
   try {
-    F;
     console.log(req.query.search);
     const exp = new RegExp(req.query.search);
     const matchedArtists = await ArtistModel.find({ name: { $regex: exp } });
