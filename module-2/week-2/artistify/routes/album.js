@@ -1,6 +1,8 @@
 const express = require("express");
 const router = new express.Router();
 const AlbumModel = require("./../model/Album");
+const ArtistModel = require("./../model/Artist");
+const LabelModel = require("./../model/Label");
 const uploader = require("./../config/cloudinary");
 
 // GET - all albums
@@ -14,7 +16,9 @@ router.get("/", async (req, res, next) => {
 
 // GET - create one album (form)
 router.get("/create", async (req, res, next) => {
-  res.render("albumCreate");
+  const artists =  await ArtistModel.find();
+  const labels =  await LabelModel.find();
+  res.render("albumCreate", { artists, labels });
 });
 
 // GET - one album by id

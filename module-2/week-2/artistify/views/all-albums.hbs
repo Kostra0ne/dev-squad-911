@@ -1,0 +1,9 @@
+<h1>All albums</h1>
+{{#each albums}}
+<div class="card album">
+    <a href="/all-albums/{{this._id}}">
+        {{this.title}}
+    </a>
+</div>
+
+{{/each}}

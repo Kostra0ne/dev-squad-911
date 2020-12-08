@@ -8,7 +8,7 @@ const artists = [
   { name: "wu tang clan", isBand: true },
   { name: "aphex twin", isBand: false },
   { name: "asaf avidian", isBand: false },
-  { name: "speultura", isBand: true },
+  { name: "bad brains", isBand: true },
   { name: "lunatic", isBand: true },
 ];
 

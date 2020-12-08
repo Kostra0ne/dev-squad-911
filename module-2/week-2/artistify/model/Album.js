@@ -5,8 +5,10 @@ const albumSchema = new Schema(
   {
     title: String,
     releaseDate: Date,
-    label: { type: Schema.Types.ObjectId, ref: "Label" },
-    artist: { type: Schema.Types.ObjectId, ref: "Artist" },
+    label: { type: Schema.Types.ObjectId, ref: "label" }, 
+    // ref is the link to an other collection, here label
+    artist: { type: Schema.Types.ObjectId, ref: "artist" }, 
+    // ref is the link to an other collection, here artist
     cover: {
       type: String,
       default:

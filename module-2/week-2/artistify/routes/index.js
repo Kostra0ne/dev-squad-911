@@ -27,15 +27,39 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/all-albums", async (req, res, next) => {
+  try {
+    res.render("all-albums", {
+      albums: await AlbumModel.find().populate("artist").populate("label"),
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/all-albums/:id", async (req, res, next) => {
+  try {
+    res.render(
+      "album-one",
+      await AlbumModel.findById(req.params.id)
+        .populate("artist")
+        .populate("label")
+    );
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.get("/search", async (req, res, next) => {
   try {
+    F;
     console.log(req.query.search);
     const exp = new RegExp(req.query.search);
     const matchedArtists = await ArtistModel.find({ name: { $regex: exp } });
     const matchedAlbums = await AlbumModel.find({ name: { $regex: exp } });
     const matchedLabels = await LabelModel.find({ name: { $regex: exp } });
     const matchedStyles = await StyleModel.find({ name: { $regex: exp } });
-    
+
     res.json({
       matchedArtists,
       matchedAlbums,

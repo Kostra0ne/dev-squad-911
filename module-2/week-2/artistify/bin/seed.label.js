@@ -4,12 +4,13 @@ require("./../config/mongo"); // fetch the db connection
 const LabelModel = require("./../model/Label"); // fetch the model to validate our user document before insertion (in database)
 
 const styles = [
-  { name: "ninja tunes", country: "uk", city: "london" },
-  { name: "loud records", country: "usa", city: "new york" },
-  { name: "warp records", country: "uk", city: "london" },
-  { name: "fat wreck chords", country: "usa", city: "san francisco" },
-  { name: "death row", country: "usa", city: "los angeles" },
-  { name: "côté obscur", country: "france", city: "marseille" },
+  { name: "Ninja Tunes", country: "uk", city: "london" },
+  { name: "Loud Records", country: "usa", city: "new york" },
+  { name: "Warp Records", country: "uk", city: "london" },
+  { name: "Fat Wreck Chords", country: "usa", city: "san francisco" },
+  { name: "Death row", country: "usa", city: "los angeles" },
+  { name: "Côté Obscur", country: "france", city: "marseille" },
+  { name: "ROIR Records", country: "usa", city: "new york" },
 ];
 
 async function insertLabels() {
