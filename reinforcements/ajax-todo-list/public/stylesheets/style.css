@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+#todos {
+  max-width: 500px;
+  padding: 0;
+  list-style: none;
+}
+
+#todos .todo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#todos .todo .btn {
+  cursor: pointer;
+}
