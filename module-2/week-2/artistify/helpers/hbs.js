@@ -3,6 +3,10 @@ const moment = require("moment");
 
 // CUSTOM HELPERS
 
+hbs.registerHelper("titiOrToto", function() {
+  const random = Math.random();
+  return random < .5 ? "titi" : "toto"
+});
 
 hbs.registerHelper("toLowerCase", function(str) {
   return str.toLowerCase();
@@ -10,7 +14,7 @@ hbs.registerHelper("toLowerCase", function(str) {
 
 hbs.registerHelper("toJSON", (val) => JSON.stringify(val));
 
-hbs.registerHelper("increment", (val, count) => Number(val) + count);
+hbs.registerHelper("increment", (val, count) => Number(val) + Number(count));
 
 // function below: add the ternary operator functionnality to .hbs files
 // usage : {{ ternary true "yay" "nay " }} => prints yay

@@ -9,11 +9,12 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 // connect routers
-var indexRouter = require("./routes/index"); // require routers
-var usersRouter = require("./routes/users"); // require routers
-var artistRouter = require("./routes/artist"); // require routers
-var albumRouter = require("./routes/album"); // require routers
-var labelRouter = require("./routes/label"); // require routers
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var artistRouter = require("./routes/artist");
+var albumRouter = require("./routes/album");
+var labelRouter = require("./routes/label");
+var styleRouter = require("./routes/api.style"); 
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use("/users", usersRouter); // use routers
 app.use("/dashboard/album", albumRouter); // use label router
 app.use("/dashboard/artist", artistRouter); // use artist router
 app.use("/dashboard/label", labelRouter); // use label router
+app.use("/api/style", styleRouter); // use label router
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -51,3 +53,4 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+

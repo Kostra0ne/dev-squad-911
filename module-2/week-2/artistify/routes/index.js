@@ -29,7 +29,7 @@ router.get("/", async (req, res, next) => {
 
 router.get("/all-albums", async (req, res, next) => {
   try {
-    res.render("all-albums", {
+    res.render("albumsAll", {
       albums: await AlbumModel.find().populate("artist").populate("label"),
     });
   } catch (err) {
@@ -51,11 +51,14 @@ router.get("/all-albums/:id", async (req, res, next) => {
 });
 
 router.get("/search", async (req, res, next) => {
+  // req.body (posted infos)
+  // req.params (variable/dynamique part of a route path)
+  // req.query (access infos from for with get method)
   try {
-    console.log(req.query.search);
-    const exp = new RegExp(req.query.search);
+    // console.log(req.query); // query strings
+    const exp = new RegExp(req.query.search); // creating a regular expression
     const matchedArtists = await ArtistModel.find({ name: { $regex: exp } });
-    const matchedAlbums = await AlbumModel.find({ name: { $regex: exp } });
+    const matchedAlbums = await AlbumModel.find({ title: { $regex: exp } });
     const matchedLabels = await LabelModel.find({ name: { $regex: exp } });
     const matchedStyles = await StyleModel.find({ name: { $regex: exp } });
 
@@ -71,7 +74,7 @@ router.get("/search", async (req, res, next) => {
 });
 
 /* GET dashboard page  */
-router.get("/dashboard", (req, res, next) => {
+router.get("/dashboard/", (req, res, next) => {
   res.render("dashboard");
 });
 

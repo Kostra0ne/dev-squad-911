@@ -3,10 +3,15 @@
   flex-direction: column;
 }
 
+.form.row {
+  flex-direction: row;
+}
+
 .form .input {
   height: 32px;
   margin-bottom: 20px;
   border: 1px solid;
+  padding: 5px 0 5px 20px;
 }
 
 .form .icon {

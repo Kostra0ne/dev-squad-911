@@ -1,8 +1,14 @@
+{{!-- <pre>
+    {{artist}}
+</pre>
+<pre>
+    {{label}}
+</pre> --}}
 <h1>{{title}}</h1>
 <p>
-    {{artist.name}}  recorded this album
+    {{artist.name}} recorded this album the {{formatDate releaseDate}}
 </p>
 <img src="{{cover}}" alt="{{title}}'s cover'">
 <p>
-    produced by {{label.name}} ({{formatDate releaseDate}})
+    produced by {{label.name}}
 </p>
