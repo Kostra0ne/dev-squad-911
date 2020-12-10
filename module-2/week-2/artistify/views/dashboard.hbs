@@ -1,4 +1,11 @@
 <h1 class="title">Dashboard</h1>
+
+{{#if isAdmin}}
+<p>
+ ADMIN ONLY WIDGETS HERE
+</p>
+{{/if}}
+
 <nav id="nav-dashboard">
     <a href="/dashboard/artist" class="link artist"><i class="fa fa-list"></i> artists</a> |
     <a href="/dashboard/artist/create" class="link artist"><i class="fa fa-plus"></i> artist</a> |
@@ -8,7 +15,6 @@
 
     <a href="/dashboard/label" class="link label"><i class="fa fa-list"></i> labels</a> |
     <a href="/dashboard/label/create" class="link label"><i class="fa fa-plus"></i> label</a> |
-
 
     <a href="/api/style/dashboard" class="link style"><i class="fa fa-list"></i> styles</a>
 </nav>

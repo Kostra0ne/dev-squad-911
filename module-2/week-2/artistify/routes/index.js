@@ -4,7 +4,7 @@ const ArtistModel = require("./../model/Artist");
 const AlbumModel = require("./../model/Album");
 const LabelModel = require("./../model/Label");
 const StyleModel = require("./../model/Style");
-const { get } = require("mongoose");
+const protectAdminRoute = require("./../middlewares/protectAdminRoute");
 
 // express routers share the same API as the main app...
 // router.get / router.post
@@ -55,7 +55,7 @@ router.get("/search", async (req, res, next) => {
   // req.params (variable/dynamique part of a route path)
   // req.query (access infos from for with get method)
   try {
-    // console.log(req.query); // query strings
+    console.log(req.query); // query strings
     const exp = new RegExp(req.query.search); // creating a regular expression
     const matchedArtists = await ArtistModel.find({ name: { $regex: exp } });
     const matchedAlbums = await AlbumModel.find({ title: { $regex: exp } });
@@ -74,7 +74,8 @@ router.get("/search", async (req, res, next) => {
 });
 
 /* GET dashboard page  */
-router.get("/dashboard/", (req, res, next) => {
+
+router.get("/dashboard", protectAdminRoute, (req, res, next) => {
   res.render("dashboard");
 });
 

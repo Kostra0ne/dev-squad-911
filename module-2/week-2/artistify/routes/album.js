@@ -4,6 +4,9 @@ const AlbumModel = require("./../model/Album");
 const ArtistModel = require("./../model/Artist");
 const LabelModel = require("./../model/Label");
 const uploader = require("./../config/cloudinary");
+const protectAdminRoute = require("./../middlewares/protectAdminRoute");
+
+router.use(protectAdminRoute);
 
 // GET - all albums
 router.get("/", async (req, res, next) => {

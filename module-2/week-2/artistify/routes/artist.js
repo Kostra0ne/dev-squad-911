@@ -2,6 +2,9 @@ const express = require("express");
 const router = new express.Router();
 const ArtistModel = require("./../model/Artist");
 const uploader = require("./../config/cloudinary");
+const protectAdminRoute = require("./../middlewares/protectAdminRoute")
+
+router.use(protectAdminRoute);
 
 // GET - all artists
 router.get("/", async (req, res, next) => {
