@@ -1,0 +1,34 @@
+.Card {
+  padding: 20px 40px;
+  margin: 10px;
+  border: 1px solid rgb(165, 165, 165);
+  background-color: white;
+  border-radius: 4px;
+  transition: transform 0.5s ease;
+}
+
+.Card.Card--dark {
+  background-color: #06090f;
+  color: white;
+  border: 1px solid black;
+}
+
+.border-20 {
+  border-radius: 20;
+}
+
+.Card:hover {
+  transform: scale(1.01);
+}
+
+body {
+  background: purple;
+}
+
+body {
+  background: red;
+}
+
+.Card__title {
+  color: pink;
+}
