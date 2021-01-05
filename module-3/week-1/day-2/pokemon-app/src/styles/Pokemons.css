@@ -1,0 +1,52 @@
+.Pokemons__to-catch__pokemons {
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.Pokemons__to-catch {
+  width: 40%;
+}
+
+.Pokemons__pokemon__image-container {
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.Pokemons__pokemon__image-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.Pokemons__pokedex {
+  width: 40%;
+}
+
+.Pokemons__pokedex__pokemons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Pokemons__pokemon {
+  display: flex;
+  cursor: pointer;
+}
+
+.Pokemons__pokemon--pokedex__image-container {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.Pokemons__pokemon--pokedex__image-container img {
+  object-fit: cover;
+  width: 100%;
+}

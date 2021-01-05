@@ -1,6 +1,7 @@
 import React from "react";
 import RoundBox from "./RoundBox";
 import pokemons from "../data/pokemon.json";
+import "../styles/Pokemons.css";
 
 class Pokemons extends React.Component {
   state = {
@@ -32,7 +33,6 @@ class Pokemons extends React.Component {
 
   removePokemon = (pokemon) => {
     // console.log(index);
-
     // 1st solution
     // const copy = [...this.state.pokedex];
     // copy.splice(index, 1);
@@ -54,40 +54,49 @@ class Pokemons extends React.Component {
   };
 
   render() {
-    console.log("I am rendering...");
-
     return (
       <div className="Pokemons">
-        <RoundBox>10</RoundBox>
+        <RoundBox>{this.state.pokedex.length}</RoundBox>
         {/* {list} */}
 
-        <div className="d-flex">
+        <div className="d-flex space-around">
           <div className="Pokemons__pokedex">
             <h2>Your pokemons</h2>
-            {this.state.pokedex.map((pokemon, index) => {
-              return (
-                <div
-                  onClick={() => this.removePokemon(pokemon)}
-                  key={`pokedex ${pokemon.id}`}
-                >
-                  <h3> {pokemon.name}</h3>
-                  {index % 2 === 0 && <p>The pokemon above is cool</p>}
-                </div>
-              );
-            })}
+            <div className="Pokemons__pokedex__pokemons">
+              {this.state.pokedex.map((pokemon, index) => {
+                return (
+                  <div
+                    key={`pokedex ${pokemon.id}`}
+                    className="Pokemons__pokemon--pokedex"
+                    onClick={() => this.removePokemon(pokemon)}
+                  >
+                    <div className="Pokemons__pokemon--pokedex__image-container">
+                      <img src={pokemon.picture} alt={pokemon.name} />
+                    </div>
+                    {index % 2 === 0 && <p>The pokemon above is cool</p>}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div>
+          <div className="Pokemons__to-catch">
             <h2>The pokemons to catch</h2>
-            {pokemons.map((pokemon) => {
-              return (
-                <div
-                  onClick={(event) => this.addPokemon(pokemon, event)}
-                  key={pokemon.id}
-                >
-                  {pokemon.name}
-                </div>
-              );
-            })}
+            <div className="Pokemons__to-catch__pokemons">
+              {pokemons.map((pokemon) => {
+                return (
+                  <div
+                    key={pokemon.id}
+                    onClick={(event) => this.addPokemon(pokemon, event)}
+                    className="Pokemons__pokemon"
+                  >
+                    <div className="Pokemons__pokemon__image-container">
+                      <img src={pokemon.picture} alt={pokemon.name} />
+                    </div>
+                    <p>{pokemon.name}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
