@@ -1,0 +1,9 @@
+.NavMain {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+}
