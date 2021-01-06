@@ -1,3 +1,8 @@
+.Pokemons {
+  display: flex;
+  flex-direction: column;
+}
+
 .Pokemons__to-catch__pokemons {
   max-height: 50vh;
   overflow: auto;
@@ -5,6 +10,15 @@
 
 .Pokemons__to-catch {
   width: 40%;
+}
+
+.Pokemons__button {
+  font-size: 38px;
+  padding: 10px 20px;
+}
+
+.Pokemons_ball {
+  align-self: flex-end;
 }
 
 .Pokemons__pokemon__image-container {

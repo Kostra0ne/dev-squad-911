@@ -29,7 +29,10 @@
 .RoundBox__content {
   z-index: 20;
   position: relative;
-  font-size: 3rem;
+  font-size: 5rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
   color: rgb(14, 199, 255);
 }
 

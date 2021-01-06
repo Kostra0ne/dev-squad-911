@@ -1,0 +1,17 @@
+.Pokemon {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.Pokemon__image-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.Pokemon__image {
+  object-fit: cover;
+  width: 100%;
+}

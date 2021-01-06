@@ -1,17 +1,25 @@
 import React from "react";
 import RoundBox from "./RoundBox";
-import pokemons from "../data/pokemon.json";
+import pokemonsFromJSON from "../data/pokemon.json";
+import FormPokemon from "./FormPokemon";
+import Pokemon from "./Pokemon";
+import Select from "./Select";
 import "../styles/Pokemons.css";
 
 class Pokemons extends React.Component {
   state = {
     pokedex: [],
+    displayForm: false,
+    pokemons: pokemonsFromJSON,
+    filteredPokemons: pokemonsFromJSON,
+    selectedValue: "",
   };
 
   addPokemon = (pokemon, event) => {
     // console.log(pokemon);
     // console.log(event);
     // console.log("COnsole i have been clicked");
+
     /** Never do this DO NOT MUTATE STATE */
     // this.state.pokedex.push(pokemon);
     // this.setState({
@@ -31,8 +39,17 @@ class Pokemons extends React.Component {
     });
   };
 
+  handleSort = () => {
+    this.setState({
+      filteredPokemons: [...this.state.filteredPokemons].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      ),
+    });
+  };
+
   removePokemon = (pokemon) => {
     // console.log(index);
+
     // 1st solution
     // const copy = [...this.state.pokedex];
     // copy.splice(index, 1);
@@ -53,49 +70,80 @@ class Pokemons extends React.Component {
     });
   };
 
+  handleFormDisplay = () => {
+    this.setState({
+      displayForm: !this.state.displayForm,
+    });
+  };
+
+  handleAddNewPokemon = (value) => {
+    this.setState({
+      pokemons: [value, ...this.state.pokemons],
+    });
+  };
+
+  handleFilter = (event) => {
+    this.setState({
+      filteredPokemons: this.state.pokemons.filter((pokemon) =>
+        pokemon.type.includes(event.target.value)
+      ),
+    });
+    // this.setState({
+    //   selectedValue: event.target.value,
+    // });
+  };
+
   render() {
     return (
       <div className="Pokemons">
-        <RoundBox>{this.state.pokedex.length}</RoundBox>
-        {/* {list} */}
+        <div className="Pokemons_ball">
+          <RoundBox value={this.state.pokemons.length} />
+        </div>
+
+        <div>
+          {/* {!this.state.displayForm && (
+            <button
+              className="Pokemons__button"
+              onClick={this.handleFormDisplay}
+              >
+              Create a Pokemon !
+            </button>
+          )} */}
+          <FormPokemon handleSubmitFromParent={this.handleAddNewPokemon} />
+        </div>
 
         <div className="d-flex space-around">
           <div className="Pokemons__pokedex">
             <h2>Your pokemons</h2>
+
             <div className="Pokemons__pokedex__pokemons">
-              {this.state.pokedex.map((pokemon, index) => {
-                return (
-                  <div
-                    key={`pokedex ${pokemon.id}`}
-                    className="Pokemons__pokemon--pokedex"
-                    onClick={() => this.removePokemon(pokemon)}
-                  >
-                    <div className="Pokemons__pokemon--pokedex__image-container">
-                      <img src={pokemon.picture} alt={pokemon.name} />
-                    </div>
-                    {index % 2 === 0 && <p>The pokemon above is cool</p>}
-                  </div>
-                );
-              })}
+              {this.state.pokedex.map((pokemon) => (
+                <Pokemon
+                  key={pokemon.id}
+                  pokemon={pokemon}
+                  size="lg"
+                  onClick={() => this.removePokemon(pokemon.id)}
+                />
+              ))}
             </div>
           </div>
           <div className="Pokemons__to-catch">
             <h2>The pokemons to catch</h2>
+
+            <div className="Pokemons__filter">
+              <Select handleFilterFromParent={this.handleFilter} />
+              <button onClick={this.handleSort}>Sort by name</button>
+            </div>
+
             <div className="Pokemons__to-catch__pokemons">
-              {pokemons.map((pokemon) => {
-                return (
-                  <div
-                    key={pokemon.id}
-                    onClick={(event) => this.addPokemon(pokemon, event)}
-                    className="Pokemons__pokemon"
-                  >
-                    <div className="Pokemons__pokemon__image-container">
-                      <img src={pokemon.picture} alt={pokemon.name} />
-                    </div>
-                    <p>{pokemon.name}</p>
-                  </div>
-                );
-              })}
+              {this.state.filteredPokemons.map((pokemon) => (
+                <Pokemon
+                  key={pokemon.id}
+                  withName={true}
+                  pokemon={pokemon}
+                  onClick={() => this.addPokemon(pokemon)}
+                />
+              ))}
             </div>
           </div>
         </div>
