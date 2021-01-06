@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+
+.form__control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form__label {
+  margin-bottom: 10px;
+}
+
+.form__input {
+  padding: 10px 20px;
+}
+
+.form__button {
+  padding: 10px 20px;
+}
