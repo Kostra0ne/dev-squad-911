@@ -4,6 +4,6 @@
 node_modules/
 .env
 module-1/week-2/day-1/dom-playground
-
+.eslintcache
 module-2/labs-soluce-proposals/lab-es6-promises
 module-2/labs-soluce-proposals/lab-mongoose-recipes
