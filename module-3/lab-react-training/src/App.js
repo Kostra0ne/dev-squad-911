@@ -10,6 +10,7 @@ import LikeButton from './components/LikeButton';
 import ClickablePicture from './components/ClickablePicture';
 import Dice from './components/Dice';
 import Carousel from './components/Carousel';
+import RGBColorPicker from './components/RGBColorPicker';
 
 import './App.css';
 
@@ -139,6 +140,9 @@ function App() {
           'https://randomuser.me/api/portraits/men/2.jpg',
         ]}
       />
+
+      <h2 className="App__title">16. RGBColorPicker</h2>
+      <RGBColorPicker />
     </div>
   );
 }
