@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+
 import "./form.css";
+
+const str = "str";
 
 class Form extends Component {
   state = {
@@ -7,7 +10,6 @@ class Form extends Component {
     lastName: "",
     username: "",
     isDeveloper: false,
-    error: {},
   };
 
   // handleFirstName = (event) => {
@@ -91,6 +93,7 @@ class Form extends Component {
       <form className="form" onSubmit={this.handleSubmit}>
         <div className="form__control">
           <label className="form__label">First name</label>
+
           <input
             id="firstName"
             name="firstName"
@@ -99,7 +102,7 @@ class Form extends Component {
             className="form__input"
             type="text"
           />
-          {this.state.error.firstName && <p>Error message</p>}
+          {/* {this.state.error.firstName && <p>Error message</p>} */}
           {/* {!this.isLongEnough(this.state.firstName) && (
             <p style={{ color: "red" }}>
               The first name needs to be of 6 or more characters
