@@ -29,13 +29,13 @@ class SingleColorPicker extends Component {
       >
         <div
           style={{
-            // backgroundColor: rgbaValue,
-            backgroundColor:
-              this.props.color === 'r'
-                ? 'red'
-                : this.props.color === 'g'
-                ? 'green'
-                : 'dodgerblue',
+            backgroundColor: rgbaValue,
+            // backgroundColor:
+            //   this.props.color === 'r'
+            //     ? 'red'
+            //     : this.props.color === 'g'
+            //     ? 'green'
+            //     : 'dodgerblue',
             width: 100,
             height: 100,
             border: '2px solid black',

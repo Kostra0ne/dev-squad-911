@@ -11,8 +11,12 @@ import ClickablePicture from './components/ClickablePicture';
 import Dice from './components/Dice';
 import Carousel from './components/Carousel';
 import RGBColorPicker from './components/RGBColorPicker';
+import FaceBook from './components/FaceBook';
+import NumbersTable from './components/NumbersTable';
+import SignupPage from './components/SignupPage';
 
 import './App.css';
+import FaceBookAdvanced from './components/FaceBookAdvanced';
 
 function App() {
   return (
@@ -140,6 +144,21 @@ function App() {
           'https://randomuser.me/api/portraits/men/2.jpg',
         ]}
       />
+
+      <h2 className="App__title">12. NumbersTable</h2>
+
+      <NumbersTable limit={12} />
+
+      <h2 className="App__title">13. FaceBook </h2>
+
+      <FaceBook />
+
+      <h2 className="App__title">14. FaceBookAdvanced </h2>
+      <FaceBookAdvanced />
+
+      <h2 className="App__title">15. SignupPage </h2>
+
+      <SignupPage />
 
       <h2 className="App__title">16. RGBColorPicker</h2>
       <RGBColorPicker />

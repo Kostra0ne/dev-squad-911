@@ -3,28 +3,28 @@ import SingleColorPicker from './SingleColorPicker';
 
 class RGBColorPicker extends Component {
   state = {
-    rValue: 0,
-    gValue: 0,
-    bValue: 0,
+    rValue: 255,
+    gValue: 255,
+    bValue: 255,
   };
 
   myCallback = (color, value) => {
+    const parsedValue = value > 255 ? 255 : value < 0 ? 0 : value;
+
+    /** Solution n°1 */
+
     if (color === 'r') {
-      this.setState({
-        rValue: value,
-      });
+      this.setState({ rValue: parsedValue });
     } else if (color === 'g') {
-      this.setState({ gValue: value });
+      this.setState({ gValue: parsedValue });
     } else {
-      this.setState({ bValue: value });
+      this.setState({ bValue: parsedValue });
     }
 
-    // this.setState({
-    //   [color + 'Value']: value,
-    // });
+    /** Solution n°2 */
 
     // this.setState({
-    //   rValue: value,
+    //   [color + 'Value']: parsedValue,
     // });
   };
 
