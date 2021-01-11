@@ -1,0 +1,8 @@
+.App__content {
+  padding: 25px 50px;
+}
+
+.Profile {
+  display: flex;
+  justify-content: space-around;
+}

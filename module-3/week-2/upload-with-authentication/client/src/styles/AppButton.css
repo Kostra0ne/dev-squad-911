@@ -1,0 +1,24 @@
+.AppButton {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  outline: none;
+  border: 4px solid transparent;
+  cursor: pointer;
+}
+
+.AppButton:focus {
+  transform: translate(2px, 2px);
+}
+
+.AppButton.primary {
+  background-color: var(--main);
+  color: var(--main-text);
+}
+
+.AppButton.secondary {
+  background-color: white;
+  border: 4px solid var(--main);
+  color: var(--main);
+}

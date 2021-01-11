@@ -1,0 +1,24 @@
+.NavMain {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: white;
+  font-size: 20px;
+  color: var(--main);
+}
+
+.NavMain__link {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+
+.NavMain__link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.NavMain__link.active {
+  border-bottom: 1px solid;
+}
