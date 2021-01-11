@@ -1,12 +1,12 @@
 import React from "react";
 import Avatar from "../Components/Avatar";
-
-const Profile = () => {
+import { withUser } from "../Auth/withUser";
+const Profile = (props) => {
   return (
     <div className="Profile">
       <div>
         <h2>Hello User</h2>
-        <Avatar src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1345,w_2000,x_0,y_0/v1593528823/shape/mentalfloss/626137-arx0nt-istock-859216986.jpg?itok=RockS-bH" />
+        <Avatar src={props.context.user.profileImage} />
       </div>
       <div>
         <h2>Your pictures !</h2>
@@ -19,4 +19,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withUser(Profile);

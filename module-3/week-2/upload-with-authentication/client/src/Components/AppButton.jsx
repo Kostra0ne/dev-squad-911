@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/AppButton.css";
 
+/** Variant can be "primary" | "secondary" */
+
 const AppButton = ({ variant, onClick, children }) => {
   const mainClass = `AppButton ${variant ? variant : "primary"}`;
 

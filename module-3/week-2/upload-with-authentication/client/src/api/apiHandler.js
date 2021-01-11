@@ -1,10 +1,11 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: process.env.BACKEND_URL + "/api",
+  baseURL: process.env.REACT_APP_BACKEND_URL + "/api",
+  withCredentials: true, // Sends cookies to API
 });
 
-export default {
+const apiHandler = {
   service,
 
   signin(data) {
@@ -18,4 +19,10 @@ export default {
   isLoggedIn() {
     return service.get("/auth/isLoggedIn").then((res) => res.data);
   },
+
+  logout() {
+    return service.get("/auth/logout");
+  },
 };
+
+export default apiHandler;
