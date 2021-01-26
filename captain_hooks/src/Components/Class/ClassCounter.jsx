@@ -12,10 +12,13 @@ class ClassCounter extends Component {
   }
 
   handleIncrement = (event) => {
-    this.setState({ counter: this.state.counter + 1 });
-    this.setState((toto) => {
+    // this.setState({ counter: this.state.counter + 1 });
+    // this.setState({ counter: this.state.counter + 1 });
+
+    this.setState((state) => {
+      console.log(state);
       return {
-        counter: toto.counter + 1,
+        counter: state.counter + 1,
       };
     });
   };
@@ -32,18 +35,10 @@ class ClassCounter extends Component {
         <hr />
 
         <div>
-          <Button
-            type="danger"
-            className="m-2"
-            onClick={this.handleDecrement}
-          >
+          <Button type="danger" className="m-2" onClick={this.handleDecrement}>
             Decrement
           </Button>
-          <Button
-            type="primary"
-            className="m-2"
-            onClick={this.handleIncrement}
-          >
+          <Button type="primary" className="m-2" onClick={this.handleIncrement}>
             Increment
           </Button>
         </div>

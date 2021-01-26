@@ -14,7 +14,13 @@ function App() {
     <div className="App">
       <NavMain />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          render={(props) => {
+            return <Home {...props} />;
+          }}
+        />
         <Route path="/intro" component={Intro} />
         <Route path="/class-async" component={ClassAsync} />
         <Route path="/hook-async" component={HookAsync} />

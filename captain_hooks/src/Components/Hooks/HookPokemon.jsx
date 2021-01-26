@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import CardPokemon from "Components/CardPokemon";
 import pokemonAPI from "api/pokemonAPI";
 
-const HookPokemon = ({ selectedPokemon }) => {
+const HookPokemon = (props) => {
   const [pokemon, setPokemon] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     pokemonAPI
-      .getOne(selectedPokemon)
+      .getOne(props.selectedPokemon)
       .then((data) => {
         setLoading(false);
         setPokemon(data);
@@ -17,7 +17,7 @@ const HookPokemon = ({ selectedPokemon }) => {
       .catch((err) => {
         setLoading(false);
       });
-  }, [selectedPokemon]);
+  }, []);
 
   if (isLoading) return null;
   return <CardPokemon pokemon={pokemon} />;
