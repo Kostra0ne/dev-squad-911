@@ -31,9 +31,9 @@ class ClassPokemon extends Component {
         .getOne(this.props.selectedPokemon)
         .then((data) => {
           //Emulating crappy internet in order to show Loading...
-          this.timeoutId = setTimeout(() => {
-            this.setState({ pokemon: data, isLoading: false });
-          }, 1000);
+          // this.timeoutId = setTimeout(() => {
+          this.setState({ pokemon: data, isLoading: false });
+          // }, 1000);
         })
         .catch((err) => {
           this.setState({ isLoading: false });
@@ -41,9 +41,9 @@ class ClassPokemon extends Component {
     }
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.timeoutId);
-  }
+  // componentWillUnmount() {
+  //   clearTimeout(this.timeoutId);
+  // }
 
   render() {
     console.log(this.props.selectedPokemon);

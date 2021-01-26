@@ -13,13 +13,9 @@ class ClassListPokemon extends Component {
     pokemonAPI
       .getAll()
       .then((data) => {
+        console.log(data);
         //Emulating crappy internet in order to show Loading...
-        this.timeoutid = setTimeout(() => {
-          if (this.timeoutid) {
-            this.setState({ pokemons: data, isLoading: false });
-            clearTimeout(this.timeoutid);
-          }
-        }, 1000);
+        this.setState({ pokemons: data, isLoading: false });
       })
       .catch((err) => {
         this.setState({ isLoading: false });
@@ -27,7 +23,7 @@ class ClassListPokemon extends Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeoutid);
+    // clearTimeout(this.timeoutid);
   }
 
   render() {

@@ -1,3 +1,4 @@
+import { faTooth } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 /* 
@@ -6,7 +7,7 @@ import { useState } from "react";
 
 */
 
-export function useForm(initialValues = {}) {
+export const useForm = (initialValues = {}) => {
   const [formValues, setFormValues] = useState(initialValues);
 
   function handleChange(event) {
@@ -27,10 +28,10 @@ export function useForm(initialValues = {}) {
 
   function getInputProps(fieldName) {
     return {
-      name: fieldName,
-      value: formValues[fieldName] || "",
-      checked: formValues[fieldName] || false,
+      id: fieldName,
       onChange: handleChange,
+      value: formValues[fieldName],
+      name: fieldName,
     };
   }
 
@@ -39,4 +40,4 @@ export function useForm(initialValues = {}) {
     handleChange,
     getInputProps,
   };
-}
+};
